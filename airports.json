@@ -1,0 +1,88 @@
+{
+  "title": "Airport Codes",
+  "name": "Airport_codes",
+  "resources": [
+    {
+      "name": "airports.csv",
+      "path": "airports.csv",
+      "mediatype": "application/vnd.ms-excel",
+      "bytes": 6960596,
+      "schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "ident",
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "latitude_deg",
+            "type": "number"
+          },
+          {
+            "name": "longitude_deg",
+            "type": "number"
+          },
+          {
+            "name": "elevation_ft",
+            "type": "number"
+          },
+          {
+            "name": "continent",
+            "type": "string"
+          },
+          {
+            "name": "iso_country",
+            "type": "string"
+          },
+          {
+            "name": "iso_region",
+            "type": "string"
+          },
+          {
+            "name": "municipality",
+            "type": "string"
+          },
+          {
+            "name": "scheduled_service",
+            "type": "string"
+          },
+          {
+            "name": "gps_code",
+            "type": "string"
+          },
+          {
+            "name": "iata_code",
+            "type": "number"
+          },
+          {
+            "name": "local_code",
+            "type": "string"
+          },
+          {
+            "name": "home_link",
+            "type": "number"
+          },
+          {
+            "name": "wikipedia_link",
+            "type": "number"
+          },
+          {
+            "name": "keywords",
+            "type": "number"
+          }
+        ]
+      }
+    }
+  ]
+}

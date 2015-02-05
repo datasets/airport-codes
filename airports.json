@@ -1,12 +1,12 @@
 {
-  "title": "Airport Codes",
-  "name": "Airport_codes",
+  "title": "Airport",
+  "name": "airport",
   "resources": [
     {
       "name": "airports.csv",
       "path": "airports.csv",
-      "mediatype": "application/vnd.ms-excel",
-      "bytes": 6960596,
+      "mediatype": "text/csv",
+      "bytes": 21562,
       "schema": {
         "fields": [
           {
@@ -19,8 +19,8 @@
           },
           {
             "name": "iata_code",
-            "type": "number"
-          },
+            "type": "string"
+          }
         ]
       }
     }

@@ -1,10 +1,17 @@
 {
-  "title": "Airport",
-  "name": "airport",
+  "title": "Airport Codes",
+  "name": "airport codes",
+  "homepage": "http://www.ourairports.com/",
+  "version": "0.1.0",
+  "license": "PDDL-1.0",
+  "sources": [{
+    "name": "Our Airports",
+    "web": "http://ourairports.com/data/"
+  }],
   "resources": [
     {
-      "name": "airports.csv",
-      "path": "airports.csv",
+      "name": "airport-codes.csv",
+      "path": "data/airport-codes.csv",
       "mediatype": "text/csv",
       "bytes": 21562,
       "schema": {

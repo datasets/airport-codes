@@ -6,6 +6,13 @@ which is a four letter code used by ATC systems and for airports that do not hav
 
 Airport codes from around the world. Downloaded from public domain source http://ourairports.com/data/ who have compiled this data from multiple different sources. This data is updated nightly.
 
+##FORMAT
+
+There are 3 separate files :
+1. airport-codes contains the list of all airport codes, the attributes are identified in datapackage description
+2. countries is the list of countries in file 1 , helpful in identifying the country codes
+3. regions is the list of regions in file 1, helpful in identifying the region codes
+
 ##Preparation
 
 Download and clean the csv file as is from the url http://ourairports.com/data/

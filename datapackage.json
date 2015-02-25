@@ -1,8 +1,8 @@
 {
   "title": "Airport Codes",
-  "name": "airport-codes",
+  "name": "airport codes",
   "homepage": "http://www.ourairports.com/",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "PDDL-1.0",
   "sources": [{
     "name": "Our Airports",
@@ -17,7 +17,39 @@
       "schema": {
         "fields": [
           {
+            "name": "id",
+            "type": "string"
+          },
+          {
+            "name": "ident",
+            "type": "string"
+          },
+		{
+            "name": "type",
+            "type": "string"
+          },
+          {
             "name": "name",
+            "type": "string"
+          },
+		  {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "latitude_deg",
+            "type": "string"
+          },
+          {
+            "name": "longitude_deg",
+            "type": "string"
+          },
+          {
+            "name": "elevation_ft",
+            "type": "string"
+          },
+          {
+            "name": "continent",
             "type": "string"
           },
           {
@@ -25,10 +57,46 @@
             "type": "string"
           },
           {
+            "name": "iso_region",
+            "type": "string"
+          },
+          {
+            "name": "municipality",
+            "type": "string"
+          },
+          {
+            "name": "scheduled_service",
+            "type": "string"
+          },
+          {
+            "name": "gps_code",
+            "type": "string"
+          },
+          {
             "name": "iata_code",
             "type": "string"
-          }
-        ]
+          },
+          {
+            "name": "local_code",
+            "type": "string"
+          },
+          {
+            "name": "home_link",
+            "type": "string"
+          },
+          {
+            "name": "home_link"
+            "type": "string"
+          },
+          {
+            "name": "wikipedia_link",
+            "type": "string"
+          },
+          {
+            "name": "keywords",
+            "type": "string"
+          },
+           ]
       }
     }
   ]

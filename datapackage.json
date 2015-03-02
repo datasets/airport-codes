@@ -18,7 +18,7 @@
         "fields": [
           {
             "name": "id",
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "ident",
@@ -38,15 +38,15 @@
           },
           {
             "name": "latitude_deg",
-            "type": "string"
+            "type": "geopoint"
           },
           {
             "name": "longitude_deg",
-            "type": "string"
+            "type": "geopoint"
           },
           {
             "name": "elevation_ft",
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "continent",
@@ -95,7 +95,7 @@
           {
             "name": "keywords",
             "type": "string"
-          },
+          }
            ]
       }
     }

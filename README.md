@@ -8,10 +8,7 @@ Airport codes from around the world. Downloaded from public domain source http:/
 
 ##FORMAT
 
-There are 3 separate files :
-1. airport-codes contains the list of all airport codes, the attributes are identified in datapackage description
-2. countries is the list of countries in file 1 , helpful in identifying the country codes
-3. regions is the list of regions in file 1, helpful in identifying the region codes
+There is one csv file ,"airport-codes" which contains the list of all airport codes, the attributes are identified in datapackage description. Some of the columns contain attributes identifying airport locations, other codes (IATA, local if exist) that are relevant to identification of an airport
 
 ##Preparation
 

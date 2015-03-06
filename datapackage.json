@@ -12,8 +12,8 @@
     {
       "name": "airport-codes.csv",
       "path": "data/airport-codes.csv",
+	  "format": "csv",
       "mediatype": "text/csv",
-      "bytes": 21562,
       "schema": {
         "fields": [
           {
@@ -24,7 +24,7 @@
             "name": "ident",
             "type": "string"
           },
-		{
+		  {
             "name": "type",
             "type": "string"
           },
@@ -33,10 +33,6 @@
             "type": "string"
           },
 		  {
-            "name": "name",
-            "type": "string"
-          },
-          {
             "name": "latitude_deg",
             "type": "geopoint"
           },
@@ -65,10 +61,6 @@
             "type": "string"
           },
           {
-            "name": "scheduled_service",
-            "type": "string"
-          },
-          {
             "name": "gps_code",
             "type": "string"
           },
@@ -79,25 +71,8 @@
           {
             "name": "local_code",
             "type": "string"
-          },
-          {
-            "name": "home_link",
-            "type": "string"
-          },
-          {
-            "name": "home_link"
-            "type": "string"
-          },
-          {
-            "name": "wikipedia_link",
-            "type": "string"
-          },
-          {
-            "name": "keywords",
-            "type": "string"
           }
-           ]
+        ]
       }
     }
   ]
-}

@@ -5,8 +5,8 @@
   "version": "0.2.0",
   "license": "PDDL-1.0",
   "sources": [{
-    "name": "Our Airports",
-    "web": "http://ourairports.com/data/"
+  "name": "Our Airports",
+  "web": "http://ourairports.com/data/"
   }],
   "resources": [
     {
@@ -15,12 +15,8 @@
 	  "format": "csv",
       "mediatype": "text/csv",
       "schema": {
-        "fields": [
-          {
-            "name": "id",
-            "type": "integer"
-          },
-          {
+      "fields": [
+		  {
             "name": "ident",
             "type": "string"
           },

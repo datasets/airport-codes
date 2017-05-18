@@ -12,7 +12,7 @@
     {
       "name": "airport-codes.csv",
       "path": "data/airport-codes.csv",
-	  "format": "csv",
+	    "format": "csv",
       "mediatype": "text/csv",
       "schema": {
       "fields": [
@@ -29,11 +29,7 @@
             "type": "string"
           },
 		  {
-            "name": "latitude_deg",
-            "type": "geopoint"
-          },
-          {
-            "name": "longitude_deg",
+            "name": "coordinates",
             "type": "geopoint"
           },
           {

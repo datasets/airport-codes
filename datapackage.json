@@ -4,10 +4,13 @@
   "homepage": "http://www.ourairports.com/",
   "version": "0.2.0",
   "license": "PDDL-1.0",
-  "sources": [{
-  "name": "Our Airports",
-  "web": "http://ourairports.com/data/"
-  }],
+  "sources": [
+    {
+      "name": "Our Airports",
+      "path": "http://ourairports.com/data/",
+      "title": "Our Airports"
+    }
+  ],
   "resources": [
     {
       "name": "airport-codes.csv",

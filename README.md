@@ -10,7 +10,23 @@ There is one csv file ,"airport-codes" which contains the list of all airport co
 
 ## Preparation
 
-Download and clean the csv file as is from the url http://ourairports.com/data/
+
+Original source is downloaded in archive/data.csv 
+Original source url http://ourairports.com/data/airports.csv
+
+There are several steps have been done to get final data.
+
+* We download original data into `archive/data.csv`
+* We merge columns "latitude_deg" and "longitude_deg" into "coordinates" and remove columns "id",  "scheduled_service", "home_link", "wikipedia_link", "keywords"
+
+Original source url http://ourairports.com/data/airports.csv
+
+Process is recorded and automated in python script:
+
+```
+scripts/process.py
+```
+
 
 TODO: Add relationship to UNLOCODEs ?
 

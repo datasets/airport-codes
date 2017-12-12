@@ -1,5 +1,6 @@
 import csv
 import urllib
+import copy
 
 archive = 'archive/data.csv'
 
@@ -9,13 +10,14 @@ def download():
 
 def process():
     with open(archive,"rb") as source:
-        reader = csv.reader(source)
-        next(reader, None)  # skip the headers
+        reader = csv.DictReader(source)
         with open("data/airport-codes.csv","wb") as result:
-            writer = csv.writer(result)
-            writer.writerow(('ident','type','name','coordinates','elevation_ft','continent','iso_country','iso_region','municipality','gps_code','iata_code','local_code'))
+            fieldnames = ['ident','type','name','coordinates','elevation_ft','continent','iso_country','iso_region','municipality','gps_code','iata_code','local_code']
+            writer = csv.DictWriter(result, fieldnames=fieldnames, extrasaction='ignore')
+            writer.writeheader()
             for row in reader:
-                result= row[1:4] + [ row[5]+", "+row[4]] + row[6:11] + row[12:15]
-                writer.writerow(result)
+                new_row = copy.deepcopy(row)
+                new_row['coordinates'] = "{}, {}".format(row['longitude_deg'], row['latitude_deg'])
+                writer.writerow(new_row)
 download()     
 process()

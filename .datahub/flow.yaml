@@ -1,0 +1,96 @@
+meta:
+  dataset: airport-codes
+  findability: unlisted
+  owner: acckiygerman
+  ownerid: acckiygerman
+  version: 1
+
+inputs:
+  -
+    kind: datapackage
+    url: https://raw.githubusercontent.com/datasets/airport-codes/master/datapackage.json
+    parameters:
+      descriptor:
+        name: airport-codes
+        title: Airport Codes
+        homepage: http://www.ourairports.com/
+        version: 0.2.0
+        license: PDDL-1.0
+        resources:
+          -
+            name: airport-codes.csv
+            path: data/airport-codes.csv
+            format: csv
+            mediatype: text/csv
+            "schema":
+              "fields":
+                -
+                  "name": "ident"
+                  "type": "string"
+                -
+                  "name": "type"
+                  "type": "string"
+                -
+                  "name": "name"
+                  "type": "string"
+                -
+                  "name": "coordinates"
+                  "type": "geopoint"
+                -
+                  "name": "elevation_ft"
+                  "type": "integer"
+                -
+                  "name": "continent"
+                  "type": "string"
+                -
+                  "name": "iso_country"
+                  "type": "string"
+                -
+                  "name": "iso_region"
+                  "type": "string"
+                -
+                  "name": "municipality"
+                  "type": "string"
+                -
+                  "name": "gps_code"
+                  "type": "string"
+                -
+                  "name": "iata_code"
+                  "type": "string"
+                -
+                  "name": "local_code"
+                  "type": "string"
+      resource-mapping:
+        airports: http://ourairports.com/data/airports.csv
+
+processing:
+  -
+    input: airports
+    output: airport-codes.csv
+    # processors
+    dpp:
+      -
+        run: add_field
+        parameters:
+          resources: airport-codes.csv
+          fields:
+            -
+              operation: format
+              target: coordinates
+              with: '{longitude_deg}, {latitude_deg}'
+      -
+        run: delete_fields
+        parameters:
+          resources: airport-codes
+          fields:
+            - longitude_deg
+            - atitude_deg
+
+# test output
+outputs:
+  -
+    kind: dump.to_zip
+    parameters:
+        out-file: airport_codes_test.zip
+
+schedule: 'every 1d'

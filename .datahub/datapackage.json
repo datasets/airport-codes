@@ -41,7 +41,7 @@
           "type": "number"
         },
         {
-          "name": "atitude_deg",
+          "name": "latitude_deg",
           "type": "number"
         },
         {

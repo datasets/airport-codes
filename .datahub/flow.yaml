@@ -42,7 +42,7 @@ inputs:
                   "name": "longitude_deg"
                   "type": "number"
                 -
-                  "name": "atitude_deg"
+                  "name": "latitude_deg"
                   "type": "number"
                 -
                   "name": "elevation_ft"
@@ -91,7 +91,7 @@ processing:
     # processors
     dpp:
       -
-        run: add_field
+        run: add_computed_field
         parameters:
           resources: airport-codes
           fields:
@@ -106,16 +106,16 @@ processing:
           fields:
             - id
             - longitude_deg
-            - atitude_deg
+            - latitude_deg
             - scheduled_service
             - home_link
             - wikipedia_link
             - keywords
 # test output
-outputs:
-  -
-    kind: dump.to_zip
-    parameters:
-        out-file: airport_codes_test.zip
+#outputs:
+#  -
+#    kind: dump.to_zip
+#    parameters:
+#        out-file: airport_codes_test.zip
 
 schedule: 'every 1d'

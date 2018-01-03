@@ -1,14 +1,14 @@
 meta:
   dataset: airport-codes
   findability: unlisted
-  owner: acckiygerman
-  ownerid: acckiygerman
-  version: 1
+  owner: AcckiyGerman
+  ownerid: a08d3588fbae0355042537595c65819d
+  version: 2
 
 inputs:
   -
     kind: datapackage
-    url: https://raw.githubusercontent.com/datasets/airport-codes/master/datapackage.json
+    url: https://raw.githubusercontent.com/datasets/airport-codes/master/.datahub/datapackage.json
     parameters:
       descriptor:
         name: airport-codes
@@ -61,11 +61,11 @@ inputs:
                   "name": "local_code"
                   "type": "string"
       resource-mapping:
-        airports: http://ourairports.com/data/airports.csv
+        airport-codes.csv: http://ourairports.com/data/airports.csv
 
 processing:
   -
-    input: airports
+    input: airport-codes.csv
     output: airport-codes.csv
     # processors
     dpp:
@@ -81,7 +81,7 @@ processing:
       -
         run: delete_fields
         parameters:
-          resources: airport-codes
+          resources: airport-codes.csv
           fields:
             - longitude_deg
             - atitude_deg

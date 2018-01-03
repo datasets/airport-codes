@@ -18,7 +18,7 @@ inputs:
         license: PDDL-1.0
         resources:
           -
-            name: airport-codes.csv
+            name: airport-codes
             path: data/airport-codes.csv
             format: csv
             mediatype: text/csv
@@ -34,8 +34,11 @@ inputs:
                   "name": "name"
                   "type": "string"
                 -
-                  "name": "coordinates"
-                  "type": "geopoint"
+                  "name": "longitude_deg"
+                  "type": "number"
+                -
+                  "name": "atitude_deg"
+                  "type": "number"
                 -
                   "name": "elevation_ft"
                   "type": "integer"
@@ -61,18 +64,18 @@ inputs:
                   "name": "local_code"
                   "type": "string"
       resource-mapping:
-        airport-codes.csv: http://ourairports.com/data/airports.csv
+        airport-codes: http://ourairports.com/data/airports.csv
 
 processing:
   -
-    input: airport-codes.csv
-    output: airport-codes.csv
+    input: airport-codes
+    output: airport-codes
     # processors
     dpp:
       -
         run: add_field
         parameters:
-          resources: airport-codes.csv
+          resources: airport-codes
           fields:
             -
               operation: format
@@ -81,7 +84,7 @@ processing:
       -
         run: delete_fields
         parameters:
-          resources: airport-codes.csv
+          resources: airport-codes
           fields:
             - longitude_deg
             - atitude_deg

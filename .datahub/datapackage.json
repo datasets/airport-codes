@@ -14,7 +14,7 @@
   ],
   "resources": [
     {
-      "name": "airport-codes.csv",
+      "name": "airport-codes",
       "path": "data/airport-codes.csv",
 	    "format": "csv",
       "mediatype": "text/csv",
@@ -32,9 +32,13 @@
             "name": "name",
             "type": "string"
           },
-		  {
-            "name": "coordinates",
-            "type": "geopoint"
+          {
+            "name": "longitude_deg",
+            "type": "number"
+          },
+          {
+            "name": "atitude_deg",
+            "type": "number"
           },
           {
             "name": "elevation_ft",

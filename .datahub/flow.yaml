@@ -24,6 +24,11 @@ inputs:
             mediatype: text/csv
             "schema":
               "fields":
+#	id+	scheduled_service+	home_link+	wikipedia_link	keywords
+
+                -
+                  "name": "id"
+                  "type": "integer"
                 -
                   "name": "ident"
                   "type": "string"
@@ -55,6 +60,9 @@ inputs:
                   "name": "municipality"
                   "type": "string"
                 -
+                  "name": "scheduled_service"
+                  "type": "string"
+                -
                   "name": "gps_code"
                   "type": "string"
                 -
@@ -63,6 +71,16 @@ inputs:
                 -
                   "name": "local_code"
                   "type": "string"
+                -
+                  "name": "home_link"
+                  "type": "string"
+                -
+                  "name": "wikipedia_link"
+                  "type": "string"
+                -
+                  "name": "keywords"
+                  "type": "string"
+
       resource-mapping:
         airport-codes: http://ourairports.com/data/airports.csv
 
@@ -86,9 +104,13 @@ processing:
         parameters:
           resources: airport-codes
           fields:
+            - id
             - longitude_deg
             - atitude_deg
-
+            - scheduled_service
+            - home_link
+            - wikipedia_link
+            - keywords
 # test output
 outputs:
   -

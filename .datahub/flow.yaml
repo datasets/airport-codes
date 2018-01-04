@@ -36,10 +36,10 @@ inputs:
                   "name": "name"
                   "type": "string"
                 -
-                  "name": "longitude_deg"
+                  "name": "latitude_deg"
                   "type": "number"
                 -
-                  "name": "latitude_deg"
+                  "name": "longitude_deg"
                   "type": "number"
                 -
                   "name": "elevation_ft"

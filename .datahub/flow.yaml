@@ -1,6 +1,6 @@
 meta:
   dataset: airport-codes
-  findability: unlisted
+  findability: public
   owner: core
   ownerid: core
 

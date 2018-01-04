@@ -3,7 +3,6 @@ meta:
   findability: unlisted
   owner: AcckiyGerman
   ownerid: a08d3588fbae0355042537595c65819d
-  version: 2
 
 inputs:
   -
@@ -24,8 +23,6 @@ inputs:
             mediatype: text/csv
             "schema":
               "fields":
-#	id+	scheduled_service+	home_link+	wikipedia_link	keywords
-
                 -
                   "name": "id"
                   "type": "integer"
@@ -111,11 +108,5 @@ processing:
             - home_link
             - wikipedia_link
             - keywords
-# test output
-#outputs:
-#  -
-#    kind: dump.to_zip
-#    parameters:
-#        out-file: airport_codes_test.zip
 
 schedule: 'every 1d'

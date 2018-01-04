@@ -27,6 +27,7 @@ Process is recorded and automated in python script:
 scripts/process.py
 ```
 
+The same datapackage, updated on daily basis: https://datahub.io/core/airport-codes
 
 TODO: Add relationship to UNLOCODEs ?
 

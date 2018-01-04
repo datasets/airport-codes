@@ -1,8 +1,8 @@
 meta:
   dataset: airport-codes
   findability: unlisted
-  owner: AcckiyGerman
-  ownerid: a08d3588fbae0355042537595c65819d
+  owner: core
+  ownerid: core
 
 inputs:
   -

@@ -6,30 +6,26 @@ Airport codes from around the world. Downloaded from public domain source http:/
 
 ## Data
 
-There is one csv file ,"airport-codes" which contains the list of all airport codes, the attributes are identified in datapackage description. Some of the columns contain attributes identifying airport locations, other codes (IATA, local if exist) that are relevant to identification of an airport
+"data/airport-codes.csv" contains the list of all airport codes, the attributes are identified in datapackage description. Some of the columns contain attributes identifying airport locations, other codes (IATA, local if exist) that are relevant to identification of an airport.  
+Original source url is http://ourairports.com/data/airports.csv  (stored in archive/data.csv)  
 
 ## Preparation
 
-
-Original source is downloaded in archive/data.csv 
-Original source url http://ourairports.com/data/airports.csv
-
-There are several steps have been done to get final data.
-
-* We download original data into `archive/data.csv`
-* We merge columns "latitude_deg" and "longitude_deg" into "coordinates" and remove columns "id",  "scheduled_service", "home_link", "wikipedia_link", "keywords"
-
-Original source url http://ourairports.com/data/airports.csv
-
-Process is recorded and automated in python script:
-
-```
-scripts/process.py
+To update the data run the process script locally:
+```bash
+python scripts/process.py
 ```
 
-The same datapackage, updated on daily basis: https://datahub.io/core/airport-codes
+Several steps will be done to get the final data.
 
-TODO: Add relationship to UNLOCODEs ?
+* save original data into `archive/data.csv`
+* merge columns "latitude_deg" and "longitude_deg" into "coordinates" 
+* remove columns: "id",  "scheduled_service", "home_link", "wikipedia_link", "keywords"
+
+## Automation 
+
+Daily updated 'Airport codes' datapackage could be found on the [datahub.io](http://datahub.io/):  
+https://datahub.io/core/airport-codes
 
 ## License
 

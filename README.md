@@ -1,5 +1,5 @@
 The airport codes may refer to either [IATA](http://en.wikipedia.org/wiki/International_Air_Transport_Association_airport_code)
-airport code, a three-letter code which is used in passenger reservation, ticketing and baggage-handling systems, or the [ICAO](http://en.wikipedia.org/wiki/International_Civil_Aviation_Organization_airport_code) airport code 
+airport code, a three-letter code which is used in passenger reservation, ticketing and baggage-handling systems, or the [ICAO](http://en.wikipedia.org/wiki/International_Civil_Aviation_Organization_airport_code) airport code
 which is a four letter code used by ATC systems and for airports that do not have an IATA airport code (from wikipedia).
 
 Airport codes from around the world. Downloaded from public domain source http://ourairports.com/data/ who compiled this data from multiple different sources. This data is updated nightly.
@@ -11,18 +11,23 @@ Original source url is http://ourairports.com/data/airports.csv  (stored in arch
 
 ## Preparation
 
+You will need Python 3.6 or greater and [dataflows](https://pypi.org/project/dataflows/) library to run the script
+
 To update the data run the process script locally:
 ```bash
-python scripts/process.py
+# Install dataflows
+pip install dataflows
+
+# Run the script
+python flows/run.py
 ```
 
 Several steps will be done to get the final data.
 
-* save original data into `archive/data.csv`
-* merge columns "latitude_deg" and "longitude_deg" into "coordinates" 
+* merge columns "latitude_deg" and "longitude_deg" into "coordinates"
 * remove columns: "id",  "scheduled_service", "home_link", "wikipedia_link", "keywords"
 
-## Automation 
+## Automation
 
 Daily updated 'Airport codes' datapackage could be found on the [datahub.io](http://datahub.io/):  
 https://datahub.io/core/airport-codes

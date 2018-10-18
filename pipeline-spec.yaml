@@ -1,0 +1,3 @@
+airport-codes-flow:
+  pipeline:
+    - flow: airport_codes_flow

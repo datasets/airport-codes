@@ -1,7 +1,7 @@
 import os
 
 from dataflows import Flow, load, add_computed_field, delete_fields
-from dataflows import validate, update_resource, add_metadata
+from dataflows import validate, update_resource, add_metadata, dump_to_path
 
 
 def readme(fpath='README.md'):
@@ -43,7 +43,8 @@ dialing_info_cldr = Flow(
         "scheduled_service","home_link","wikipedia_link","keywords"
     ]),
     update_resource('airport-codes', **{'path':'data/airport-codes.csv', 'dpp:streaming': True}),
-    validate()
+    validate(),
+    dump_to_path()
 )
 
 def flow(parameters, datapackage, resources, stats):

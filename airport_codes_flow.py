@@ -33,11 +33,11 @@ dialing_info_cldr = Flow(
         ],
         readme=readme()
     ),
-    add_computed_field({
+    add_computed_field(fields=[{
         "operation": "format",
         "target": "coordinates",
         "with": "{latitude_deg}, {longitude_deg}"
-    }),
+    }]),
     delete_fields(fields=[
         "id","longitude_deg","latitude_deg",
         "scheduled_service","home_link","wikipedia_link","keywords"
@@ -47,8 +47,10 @@ dialing_info_cldr = Flow(
     dump_to_path()
 )
 
+
 def flow(parameters, datapackage, resources, stats):
     return dialing_info_cldr
+
 
 if __name__ == '__main__':
     dialing_info_cldr.process()

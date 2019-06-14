@@ -33,7 +33,7 @@ dialing_info_cldr = Flow(
         ],
         readme=readme()
     ),
-    add_computed_field(fields=[{
+    add_computed_field([{
         "operation": "format",
         "target": "coordinates",
         "with": "{latitude_deg}, {longitude_deg}"

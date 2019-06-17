@@ -42,7 +42,7 @@ dialing_info_cldr = Flow(
         "id","longitude_deg","latitude_deg",
         "scheduled_service","home_link","wikipedia_link","keywords"
     ]),
-    update_resource('airport-codes', **{'path':'data/airport-codes.csv', 'dpp:streaming': True}),
+    update_resource('airport-codes', **{'path':'data/airport-codes.csv'}),
     validate(),
     dump_to_path()
 )

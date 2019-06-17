@@ -1,7 +1,7 @@
 {
-  "bytes": 6003307,
-  "count_of_rows": 55093,
-  "hash": "f7000b9642ea02a8bb3cb574a3c731ea",
+  "bytes": 6005154,
+  "count_of_rows": 55113,
+  "hash": "13cba08bf6393b1b17bba96e8c3444cc",
   "homepage": "http://www.ourairports.com/",
   "licenses": [
     {
@@ -25,7 +25,6 @@
         "quoteChar": "\"",
         "skipInitialSpace": false
       },
-      "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
       "name": "airport-codes",

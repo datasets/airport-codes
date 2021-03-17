@@ -19,7 +19,7 @@ To update the data run the process script locally:
 pip install dataflows
 
 # Run the script
-python airport_codes_flow.py
+python airport-codes-flow.py
 ```
 
 Several steps will be done to get the final data.

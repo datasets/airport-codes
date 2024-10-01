@@ -1,4 +1,4 @@
-VENV = .env
+VENV = env
 PYTHON = $(VENV)/bin/python3
 PIP = $(VENV)/bin/pip
 

@@ -2,7 +2,7 @@ import csv
 from urllib.request import urlretrieve
 import copy
 
-archive = '../archive/data.csv'
+archive = '/archive/data.csv'
 
 
 def download():
@@ -13,7 +13,7 @@ def download():
 def process():
     with open(archive,"r") as source:
         reader = csv.DictReader(source)
-        with open("../data/airport-codes.csv", "w") as result:
+        with open("/data/airport-codes.csv", "w") as result:
             fieldnames = ['ident', 'type', 'name', 'coordinates', 'elevation_ft',' continent', 'iso_country',
                           'iso_region', 'municipality','gps_code', 'iata_code', 'local_code']
             writer = csv.DictWriter(result, fieldnames=fieldnames, extrasaction='ignore')

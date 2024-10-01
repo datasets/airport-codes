@@ -4,7 +4,7 @@ from dataflows import Flow, load, add_computed_field, delete_fields
 from dataflows import validate, update_resource, add_metadata, dump_to_path
 
 
-def readme(fpath='../README.md'):
+def readme(fpath='README.md'):
     if os.path.exists(fpath):
         return open(fpath).read()
 

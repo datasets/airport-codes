@@ -1,6 +1,0 @@
-airport-codes-flow:
-  pipeline:
-    - flow: airport-codes-flow
-    - run: datahub.dump.to_datahub
-  schedule:
-    crontab: 59 23 * * *

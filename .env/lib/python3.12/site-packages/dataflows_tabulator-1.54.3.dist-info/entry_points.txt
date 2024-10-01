@@ -1,0 +1,2 @@
+[console_scripts]
+tabulator = tabulator.__main__:cli

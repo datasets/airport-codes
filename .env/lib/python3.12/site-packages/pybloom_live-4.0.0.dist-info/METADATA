@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: pybloom_live
+Version: 4.0.0
+Summary: Bloom filter: A Probabilistic data structure
+Home-page: https://github.com/joseph-fox/python-bloomfilter
+Author: Jay Baird
+Author-email: jay.baird@me.com
+License: MIT License
+Keywords: data structures,bloom filter,bloom,filter,big data,probabilistic,set
+Platform: any
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Utilities
+Classifier: Topic :: Database :: Database Engines/Servers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+License-File: LICENSE.txt
+Requires-Dist: bitarray >=0.3.4
+Requires-Dist: xxhash >=3.0.0
+
+
+This bloom filter is forked from pybloom, and its tightening ratio is changed to 0.9, and this ration is consistently used. Choosing r around 0.8 - 0.9 will result in better average space usage for wide range of growth, therefore the default value of model is set to LARGE_SET_GROWTH.
+This is a Python implementation of the bloom filter probabilistic data
+structure. The module also provides a Scalable Bloom Filter that allows a
+bloom filter to grow without knowing the original set size.

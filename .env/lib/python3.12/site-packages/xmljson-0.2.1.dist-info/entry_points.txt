@@ -1,0 +1,3 @@
+[console_scripts]
+xml2json = xmljson.__main__:main
+

@@ -1,8 +1,7 @@
 import csv
-import urllib
 from urllib.request import urlretrieve
 import copy
-urllib.__version__
+
 archive = '../archive/data.csv'
 
 

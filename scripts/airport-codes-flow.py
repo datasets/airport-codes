@@ -1,8 +1,8 @@
 import os
+import requests
 
 from dataflows import Flow, load, add_computed_field, delete_fields
 from dataflows import validate, update_resource, add_metadata, dump_to_path
-
 
 def readme(fpath='README.md'):
     if os.path.exists(fpath):
@@ -10,7 +10,7 @@ def readme(fpath='README.md'):
 
 
 dialing_info_cldr = Flow(
-    load('http://ourairports.com/data/airports.csv', name='airport-codes'),
+    load('../archive/data.csv', name='airport-codes'),
     add_metadata(
         name= "airport-codes",
         title= "Airport Codes",

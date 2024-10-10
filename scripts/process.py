@@ -1,13 +1,17 @@
+import ssl
 import csv
-from urllib.request import urlretrieve
 import copy
+import requests
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 archive = 'archive/data.csv'
-
+source = 'http://ourairports.com/data/airports.csv'
 
 def download():
-    source = 'http://ourairports.com/data/airports.csv'
-    urlretrieve(source, archive)
+    r = requests.get(source, verify=False)  
+    with open(archive, 'wb') as f:
+        f.write(r.content)
 
 
 def process():

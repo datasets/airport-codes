@@ -10,7 +10,7 @@ def readme(fpath='README.md'):
 
 
 dialing_info_cldr = Flow(
-    load('../archive/data.csv', name='airport-codes'),
+    load('archive/data.csv', name='airport-codes'),
     add_metadata(
         name= "airport-codes",
         title= "Airport Codes",

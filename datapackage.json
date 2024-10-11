@@ -1,7 +1,7 @@
 {
   "bytes": 8248828,
   "count_of_rows": 80854,
-  "hash": "5cd803e499df524812fb7250188e14e8",
+  "hash": "9c524e7d053009a56411a3ab4012668b",
   "homepage": "http://www.ourairports.com/",
   "licenses": [
     {
@@ -28,7 +28,7 @@
       },
       "encoding": "utf-8",
       "format": "csv",
-      "hash": "c7ed12fb0bd2cbba5365782fc7f78c2b",
+      "hash": "d11761f9033d2d28ccee1469823046df",
       "name": "airport-codes",
       "path": "data/airport-codes.csv",
       "profile": "tabular-data-resource",

@@ -109,7 +109,5 @@
     }
   ],
   "title": "Airport Codes",
-  "version": "0.2.0",
-  "has_premium": true,
-  "collection": "logistics-data"
+  "version": "0.2.0"
 }

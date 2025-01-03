@@ -14,8 +14,16 @@ dialing_info_cldr = Flow(
     add_metadata(
         name= "airport-codes",
         title= "Airport Codes",
-        homepage= "http://www.ourairports.com/",
+        description = """Data contains the list of all airport codes,
+the attributes are listed in the table schema. Some of the columns
+contain attributes identifying airport locations,
+other codes (IATA, local if exist) that are relevant to
+identification of an airport.""",
         version= "0.2.0",
+        has_premium= True,
+        collection= "reference-data",
+        has_solutions= ["global-geo-data"],
+        homepage= "http://www.ourairports.com/",
         licenses=[
             {
               "id": "odc-pddl",

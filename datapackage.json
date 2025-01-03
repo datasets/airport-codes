@@ -109,5 +109,9 @@
     }
   ],
   "title": "Airport Codes",
-  "version": "0.2.0"
+  "description": "Data contains the list of all airport codes, the attributes are listed in the table schema. Some of the columns contain attributes identifying airport locations, other codes (IATA, local if exist) that are relevant to identification of an airport.",
+  "version": "0.2.0",
+  "has_premium": true,
+  "collection": "reference-data",
+  "has_solutions": ["global-geo-data"]
 }

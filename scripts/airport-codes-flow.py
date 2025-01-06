@@ -22,7 +22,7 @@ identification of an airport.""",
         version= "0.2.0",
         has_premium= True,
         collection= "reference-data",
-        has_solutions= ["global-geo-data"],
+        has_solutions= ["global-country-region-reference-data"],
         homepage= "http://www.ourairports.com/",
         licenses=[
             {

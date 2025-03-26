@@ -1,13 +1,13 @@
 {
-  "bytes": 8581494,
+  "bytes": 8581834,
   "collection": "reference-data",
-  "count_of_rows": 82780,
+  "count_of_rows": 82783,
   "description": "Data contains the list of all airport codes,\nthe attributes are listed in the table schema. Some of the columns\ncontain attributes identifying airport locations,\nother codes (IATA, local if exist) that are relevant to\nidentification of an airport.",
   "has_premium": true,
   "has_solutions": [
     "global-country-region-reference-data"
   ],
-  "hash": "b1aac5a11562b0735aee881282ecf9eb",
+  "hash": "c9f0d68414fd166d8116dbff543dee21",
   "homepage": "http://www.ourairports.com/",
   "licenses": [
     {
@@ -22,7 +22,7 @@
   "readme": "<a className=\"gh-badge\" href=\"https://datahub.io/core/airport-codes\"><img src=\"https://badgen.net/badge/icon/View%20on%20datahub.io/orange?icon=https://datahub.io/datahub-cube-badge-icon.svg&label&scale=1.25\" alt=\"badge\" /></a>\n\n## Description\n\nThe airport codes may refer to either [IATA](http://en.wikipedia.org/wiki/International_Air_Transport_Association_airport_code)\nairport code, a three-letter code which is used in passenger reservation, ticketing and baggage-handling systems, or the [ICAO](http://en.wikipedia.org/wiki/International_Civil_Aviation_Organization_airport_code) airport code\nwhich is a four letter code used by ATC systems and for airports that do not have an IATA airport code (from wikipedia).\n\nAirport codes from around the world. Downloaded from public domain source http://ourairports.com/data/ who compiled this data from multiple different sources. This data is updated nightly.\n\n## Data\n\n\"data/airport-codes.csv\" contains the list of all airport codes, the attributes are identified in datapackage description. Some of the columns contain attributes identifying airport locations, other codes (IATA, local if exist) that are relevant to identification of an airport.  \nOriginal source url is http://ourairports.com/data/airports.csv  (stored in archive/data.csv)  \n\n> Note: Currently the scripts is run automatically using Github Actions\n\n## Preparation\n\nYou will need Python 3.6 or greater and [dataflows](https://pypi.org/project/dataflows/) library to run the script\n\nTo update the data run the process script locally:\n```bash\n# To run locally you should do this\n# Install using requirements\npip install -r scripts/requirements.txt\npython3 scripts/process.py\npython3 scripts/airport-codes-flow.py\n\n# Run the script\nmake run\nmake clean\n```\n\nSeveral steps will be done to get the final data.\n\n* merge columns \"latitude_deg\" and \"longitude_deg\" into \"coordinates\"\n* remove columns: \"id\",  \"scheduled_service\", \"home_link\", \"wikipedia_link\", \"keywords\"\n\n## Automation\n\nDaily updated 'Airport codes' datapackage could be found on the [datahub.io](http://datahub.io/):  \nhttps://datahub.io/core/airport-codes\n\n## License\n\nThe source specifies that the data can be used as is without any warranty. Given size and factual nature of the data and its source from a US company would imagine this was public domain and as such have licensed the Data Package under the Public Domain Dedication and License (PDDL).\n",
   "resources": [
     {
-      "bytes": 8581494,
+      "bytes": 8581834,
       "dialect": {
         "caseSensitiveHeader": false,
         "delimiter": ",",
@@ -34,7 +34,7 @@
       },
       "encoding": "utf-8",
       "format": "csv",
-      "hash": "e2f610f72fb15ed8b6341eafb61e2c2e",
+      "hash": "87c2aebaa7bbc07b5ddb3752e67ac070",
       "name": "airport-codes",
       "path": "data/airport-codes.csv",
       "profile": "tabular-data-resource",

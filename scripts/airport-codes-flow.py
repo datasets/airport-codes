@@ -39,7 +39,32 @@ identification of an airport.""",
               "title": "Our Airports"
             }
         ],
-        readme=readme()
+        readme=readme(),
+        views=[
+            {
+                "name": "airports-by-type",
+                "title": "World Airports by Type",
+                "description": "Distribution of the world's ~72,000 active airports by facility type. Small airports dominate with over 42,000 facilities — the infrastructure of general aviation. Heliports number over 22,000. Large commercial airports handling scheduled passenger services number just 1,194 worldwide, underscoring how concentrated commercial aviation is.",
+                "resources": ["type-counts"],
+                "specType": "plot",
+                "spec": {
+                    "height": 340,
+                    "marginLeft": 130,
+                    "x": {"label": "Number of Airports", "grid": True},
+                    "y": {"label": None},
+                    "marks": [
+                        {
+                            "type": "barX",
+                            "x": "count",
+                            "y": "type",
+                            "fill": "#3b82f6",
+                            "tip": True,
+                            "sort": {"y": "-x"},
+                        }
+                    ],
+                },
+            }
+        ],
     ),
     add_computed_field([{
         "operation": "format",

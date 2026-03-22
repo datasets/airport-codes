@@ -1,13 +1,13 @@
 {
-  "bytes": 8782337,
+  "bytes": 8784056,
   "collection": "reference-data",
-  "count_of_rows": 84934,
+  "count_of_rows": 84951,
   "description": "Data contains the list of all airport codes,\nthe attributes are listed in the table schema. Some of the columns\ncontain attributes identifying airport locations,\nother codes (IATA, local if exist) that are relevant to\nidentification of an airport.",
   "has_premium": true,
   "has_solutions": [
     "global-country-region-reference-data"
   ],
-  "hash": "ab4e976e6c1fdc9cf3c936baf4350f8f",
+  "hash": "31b97e6f837ed25a54226d6ba96e2c20",
   "homepage": "http://www.ourairports.com/",
   "licenses": [
     {
@@ -22,7 +22,7 @@
   "readme": "<a className=\"gh-badge\" href=\"https://datahub.io/core/airport-codes\"><img src=\"https://badgen.net/badge/icon/View%20on%20datahub.io/orange?icon=https://datahub.io/datahub-cube-badge-icon.svg&label&scale=1.25\" alt=\"badge\" /></a>\n\n## Description\n\nThe airport codes may refer to either [IATA](http://en.wikipedia.org/wiki/International_Air_Transport_Association_airport_code)\nairport code, a three-letter code which is used in passenger reservation, ticketing and baggage-handling systems, or the [ICAO](http://en.wikipedia.org/wiki/International_Civil_Aviation_Organization_airport_code) airport code\nwhich is a four letter code used by ATC systems and for airports that do not have an IATA airport code (from wikipedia).\n\nAirport codes from around the world. Downloaded from public domain source http://ourairports.com/data/ who compiled this data from multiple different sources. This data is updated nightly.\n\n## Data\n\n\"data/airport-codes.csv\" contains the list of all airport codes, the attributes are identified in datapackage description. Some of the columns contain attributes identifying airport locations, other codes (IATA, local if exist) that are relevant to identification of an airport.  \nOriginal source url is http://ourairports.com/data/airports.csv  (stored in archive/data.csv)  \n\n> Note: Currently the scripts is run automatically using Github Actions\n\n## Preparation\n\nYou will need Python 3.6 or greater and [dataflows](https://pypi.org/project/dataflows/) library to run the script\n\nTo update the data run the process script locally:\n```bash\n# To run locally you should do this\n# Install using requirements\npip install -r scripts/requirements.txt\npython3 scripts/process.py\npython3 scripts/airport-codes-flow.py\n\n# Run the script\nmake run\nmake clean\n```\n\nSeveral steps will be done to get the final data.\n\n* merge columns \"latitude_deg\" and \"longitude_deg\" into \"coordinates\"\n* remove columns: \"id\",  \"scheduled_service\", \"home_link\", \"wikipedia_link\", \"keywords\"\n\n## Automation\n\nDaily updated 'Airport codes' datapackage could be found on the [datahub.io](http://datahub.io/):  \nhttps://datahub.io/core/airport-codes\n\n## License\n\nThe source specifies that the data can be used as is without any warranty. Given size and factual nature of the data and its source from a US company would imagine this was public domain and as such have licensed the Data Package under the Public Domain Dedication and License (PDDL).\n",
   "resources": [
     {
-      "bytes": 8782337,
+      "bytes": 8784056,
       "dialect": {
         "caseSensitiveHeader": false,
         "delimiter": ",",
@@ -34,7 +34,7 @@
       },
       "encoding": "utf-8",
       "format": "csv",
-      "hash": "cd85c06a67888bc2a3b03543db22ea00",
+      "hash": "6447534a4254767d7d168a1bc2efabac",
       "name": "airport-codes",
       "path": "data/airport-codes.csv",
       "profile": "tabular-data-resource",
@@ -123,62 +123,62 @@
   "version": "0.2.0",
   "views": [
     {
+      "description": "Distribution of the world's ~72,000 active airports by facility type. Small airports dominate with over 42,000 facilities — the infrastructure of general aviation. Heliports number over 22,000. Large commercial airports handling scheduled passenger services number just 1,194 worldwide, underscoring how concentrated commercial aviation is.",
       "name": "airports-by-type",
-      "title": "World Airports by Type",
-      "description": "Distribution of the world's ~72,000 active airports by facility type. Small airports dominate with over 42,000 facilities \u2014 the infrastructure of general aviation. Heliports number over 22,000. Large commercial airports handling scheduled passenger services number just 1,194 worldwide, underscoring how concentrated commercial aviation is.",
       "resources": [
         "airport-codes"
       ],
-      "specType": "plot",
       "spec": {
         "height": 340,
         "marginLeft": 130,
+        "marks": [
+          {
+            "fill": "#3b82f6",
+            "sort": {
+              "y": "-x"
+            },
+            "staticData": [
+              {
+                "count": 42582,
+                "type": "Small Airport"
+              },
+              {
+                "count": 22726,
+                "type": "Heliport"
+              },
+              {
+                "count": 4067,
+                "type": "Medium Airport"
+              },
+              {
+                "count": 1255,
+                "type": "Seaplane Base"
+              },
+              {
+                "count": 1194,
+                "type": "Large Airport"
+              },
+              {
+                "count": 61,
+                "type": "Balloonport"
+              }
+            ],
+            "tip": true,
+            "type": "barX",
+            "x": "count",
+            "y": "type"
+          }
+        ],
         "x": {
-          "label": "Number of Airports",
-          "grid": true
+          "grid": true,
+          "label": "Number of Airports"
         },
         "y": {
           "label": null
-        },
-        "marks": [
-          {
-            "type": "barX",
-            "staticData": [
-              {
-                "type": "Small Airport",
-                "count": 42582
-              },
-              {
-                "type": "Heliport",
-                "count": 22726
-              },
-              {
-                "type": "Medium Airport",
-                "count": 4067
-              },
-              {
-                "type": "Seaplane Base",
-                "count": 1255
-              },
-              {
-                "type": "Large Airport",
-                "count": 1194
-              },
-              {
-                "type": "Balloonport",
-                "count": 61
-              }
-            ],
-            "x": "count",
-            "y": "type",
-            "fill": "#3b82f6",
-            "tip": true,
-            "sort": {
-              "y": "-x"
-            }
-          }
-        ]
-      }
+        }
+      },
+      "specType": "plot",
+      "title": "World Airports by Type"
     }
   ]
 }

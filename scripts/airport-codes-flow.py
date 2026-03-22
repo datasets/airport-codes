@@ -45,7 +45,7 @@ identification of an airport.""",
                 "name": "airports-by-type",
                 "title": "World Airports by Type",
                 "description": "Distribution of the world's ~72,000 active airports by facility type. Small airports dominate with over 42,000 facilities — the infrastructure of general aviation. Heliports number over 22,000. Large commercial airports handling scheduled passenger services number just 1,194 worldwide, underscoring how concentrated commercial aviation is.",
-                "resources": ["type-counts"],
+                "resources": ["airport-codes"],
                 "specType": "plot",
                 "spec": {
                     "height": 340,
@@ -55,6 +55,14 @@ identification of an airport.""",
                     "marks": [
                         {
                             "type": "barX",
+                            "staticData": [
+                                {"type": "Small Airport", "count": 42582},
+                                {"type": "Heliport", "count": 22726},
+                                {"type": "Medium Airport", "count": 4067},
+                                {"type": "Seaplane Base", "count": 1255},
+                                {"type": "Large Airport", "count": 1194},
+                                {"type": "Balloonport", "count": 61},
+                            ],
                             "x": "count",
                             "y": "type",
                             "fill": "#3b82f6",

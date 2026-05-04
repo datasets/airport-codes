@@ -109,7 +109,8 @@
         "missingValues": [
           ""
         ]
-      }
+      },
+      "description": "Global airport data including IATA and ICAO codes, airport type, name, elevation, country, region, municipality, and geographic coordinates for over 85,000 airports worldwide."
     }
   ],
   "sources": [
@@ -123,7 +124,7 @@
   "version": "0.2.0",
   "views": [
     {
-      "description": "Distribution of the world's ~72,000 active airports by facility type. Small airports dominate with over 42,000 facilities — the infrastructure of general aviation. Heliports number over 22,000. Large commercial airports handling scheduled passenger services number just 1,194 worldwide, underscoring how concentrated commercial aviation is.",
+      "description": "Distribution of the world's ~72,000 active airports by facility type. Small airports dominate with over 42,000 facilities \u2014 the infrastructure of general aviation. Heliports number over 22,000. Large commercial airports handling scheduled passenger services number just 1,194 worldwide, underscoring how concentrated commercial aviation is.",
       "name": "airports-by-type",
       "resources": [
         "airport-codes"

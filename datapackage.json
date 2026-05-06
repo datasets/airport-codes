@@ -7,12 +7,12 @@
   "has_solutions": [
     "global-country-region-reference-data"
   ],
-  "hash": "613868d7cea61c425561cedab0ecf143",
+  "hash": "c051b282d77c804184ba066b6c0f6f82",
   "homepage": "http://www.ourairports.com/",
   "licenses": [
     {
       "id": "odc-pddl",
-      "name": "open_data_commons_public_domain_dedication_and_license_v1.0",
+      "name": "ODC-PDDL-1.0",
       "path": "http://opendatacommons.org/licenses/pddl/",
       "title": "Open Data Commons Public Domain Dedication and License v1.0"
     }

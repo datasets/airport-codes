@@ -7,7 +7,7 @@
   "has_solutions": [
     "global-country-region-reference-data"
   ],
-  "hash": "5b7644beaee6221b22a065cb024bfc60",
+  "hash": "613868d7cea61c425561cedab0ecf143",
   "homepage": "http://www.ourairports.com/",
   "licenses": [
     {
@@ -19,7 +19,7 @@
   ],
   "name": "airport-codes",
   "profile": "data-package",
-  "readme": "<a className=\"gh-badge\" href=\"https://datahub.io/core/airport-codes\"><img src=\"https://badgen.net/badge/icon/View%20on%20datahub.io/orange?icon=https://datahub.io/datahub-cube-badge-icon.svg&label&scale=1.25\" alt=\"badge\" /></a>\n\n## Description\n\nThe airport codes may refer to either [IATA](http://en.wikipedia.org/wiki/International_Air_Transport_Association_airport_code)\nairport code, a three-letter code which is used in passenger reservation, ticketing and baggage-handling systems, or the [ICAO](http://en.wikipedia.org/wiki/International_Civil_Aviation_Organization_airport_code) airport code\nwhich is a four letter code used by ATC systems and for airports that do not have an IATA airport code (from wikipedia).\n\nAirport codes from around the world. Downloaded from public domain source http://ourairports.com/data/ who compiled this data from multiple different sources. This data is updated nightly.\n\n## Data\n\n\"data/airport-codes.csv\" contains the list of all airport codes, the attributes are identified in datapackage description. Some of the columns contain attributes identifying airport locations, other codes (IATA, local if exist) that are relevant to identification of an airport.  \nOriginal source url is http://ourairports.com/data/airports.csv  (stored in archive/data.csv)  \n\n> Note: Currently the scripts is run automatically using Github Actions\n\n## Preparation\n\nYou will need Python 3.6 or greater and [dataflows](https://pypi.org/project/dataflows/) library to run the script\n\nTo update the data run the process script locally:\n```bash\n# To run locally you should do this\n# Install using requirements\npip install -r scripts/requirements.txt\npython3 scripts/process.py\npython3 scripts/airport-codes-flow.py\n\n# Run the script\nmake run\nmake clean\n```\n\nSeveral steps will be done to get the final data.\n\n* merge columns \"latitude_deg\" and \"longitude_deg\" into \"coordinates\"\n* remove columns: \"id\",  \"scheduled_service\", \"home_link\", \"wikipedia_link\", \"keywords\"\n\n## Automation\n\nDaily updated 'Airport codes' datapackage could be found on the [datahub.io](http://datahub.io/):  \nhttps://datahub.io/core/airport-codes\n\n## License\n\nThe source specifies that the data can be used as is without any warranty. Given size and factual nature of the data and its source from a US company would imagine this was public domain and as such have licensed the Data Package under the Public Domain Dedication and License (PDDL).\n",
+  "readme": "<a className=\"gh-badge\" href=\"https://datahub.io/core/airport-codes\"><img src=\"https://badgen.net/badge/icon/View%20on%20datahub.io/orange?icon=https://datahub.io/datahub-cube-badge-icon.svg&label&scale=1.25\" alt=\"badge\" /></a>\n\n## Description\n\nThe airport codes may refer to either [IATA](http://en.wikipedia.org/wiki/International_Air_Transport_Association_airport_code)\nairport code, a three-letter code which is used in passenger reservation, ticketing and baggage-handling systems, or the [ICAO](http://en.wikipedia.org/wiki/International_Civil_Aviation_Organization_airport_code) airport code\nwhich is a four letter code used by ATC systems and for airports that do not have an IATA airport code (from wikipedia).\n\nAirport codes from around the world. Downloaded from public domain source http://ourairports.com/data/ who compiled this data from multiple different sources. This data is updated nightly.\n\n## Data\n\n\"data/airport-codes.csv\" contains the list of all airport codes, the attributes are identified in datapackage description. Some of the columns contain attributes identifying airport locations, other codes (IATA, local if exist) that are relevant to identification of an airport.  \nOriginal source url is http://ourairports.com/data/airports.csv  (stored in archive/data.csv)  \n\n> Note: Currently the scripts is run automatically using Github Actions\n\n## Preparation\n\nYou will need Python 3.6 or greater and [dataflows](https://pypi.org/project/dataflows/) library to run the script\n\nTo update the data run the process script locally:\n```bash\n# To run locally you should do this\n# Install using requirements\npip install -r scripts/requirements.txt\npython3 scripts/process.py\npython3 scripts/airport-codes-flow.py\n\n# Or use make\nmake\nmake clean\n```\n\nSeveral steps will be done to get the final data.\n\n* merge columns \"latitude_deg\" and \"longitude_deg\" into \"coordinates\"\n* remove columns: \"id\",  \"scheduled_service\", \"home_link\", \"wikipedia_link\", \"keywords\"\n\n## Automation\n\nDaily updated 'Airport codes' datapackage could be found on the [datahub.io](http://datahub.io/):  \nhttps://datahub.io/core/airport-codes\n\n## License\n\nThe source specifies that the data can be used as is without any warranty. Given size and factual nature of the data and its source from a US company would imagine this was public domain and as such have licensed the Data Package under the Public Domain Dedication and License (PDDL).\n",
   "resources": [
     {
       "bytes": 8818443,
@@ -35,86 +35,72 @@
       "encoding": "utf-8",
       "format": "csv",
       "hash": "a703842678b1e549997e9701734de0c1",
-      "description": "List of airports worldwide with identification codes, location attributes, and facility type. Each row represents one airport or airfield.",
       "name": "airport-codes",
       "path": "data/airport-codes.csv",
       "profile": "tabular-data-resource",
       "schema": {
         "fields": [
           {
-            "description": "Unique identifier for the airport assigned by OurAirports (e.g. 'KLAX', '00A').",
             "format": "default",
             "name": "ident",
             "type": "string"
           },
           {
-            "description": "Type of facility. One of: small_airport, medium_airport, large_airport, heliport, seaplane_base, balloonport, closed.",
             "format": "default",
             "name": "type",
             "type": "string"
           },
           {
-            "description": "Official name of the airport or airfield.",
             "format": "default",
             "name": "name",
             "type": "string"
           },
           {
-            "description": "Elevation of the airport above mean sea level, in feet. May be empty for airports with no recorded elevation.",
             "format": "default",
             "name": "elevation_ft",
             "type": "integer"
           },
           {
-            "description": "Two-letter continent code: AF=Africa, AN=Antarctica, AS=Asia, EU=Europe, NA=North America, OC=Oceania, SA=South America.",
             "format": "default",
             "name": "continent",
             "type": "string"
           },
           {
-            "description": "ISO 3166-1 alpha-2 country code (e.g. 'US', 'GB', 'CN').",
             "format": "default",
             "name": "iso_country",
             "type": "string"
           },
           {
-            "description": "ISO 3166-2 code for the country subdivision (state, province, or region) in which the airport is located (e.g. 'US-CA', 'GB-ENG').",
             "format": "default",
             "name": "iso_region",
             "type": "string"
           },
           {
-            "description": "Name of the city or municipality the airport serves. May be empty.",
             "format": "default",
             "name": "municipality",
             "type": "string"
           },
           {
-            "description": "ICAO (International Civil Aviation Organization) four-letter airport code (e.g. 'KLAX'). May be empty for airports without an ICAO code.",
             "format": "default",
             "name": "icao_code",
             "type": "string"
           },
           {
-            "description": "IATA (International Air Transport Association) three-letter airport code used in passenger ticketing and baggage handling (e.g. 'LAX'). May be empty.",
             "format": "default",
             "name": "iata_code",
             "type": "string"
           },
           {
-            "description": "GPS code for the airport, typically the same as the ICAO code. May be empty.",
             "format": "default",
             "name": "gps_code",
             "type": "string"
           },
           {
-            "description": "Local or national code for the airport, used in country-specific systems (e.g. FAA codes in the US). May be empty.",
             "format": "default",
             "name": "local_code",
             "type": "string"
           },
           {
-            "description": "Geographic coordinates of the airport as a 'latitude, longitude' string in decimal degrees (e.g. '33.9425, -118.408056').",
             "format": "default",
             "name": "coordinates",
             "type": "string"

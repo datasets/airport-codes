@@ -35,7 +35,7 @@ identification of an airport.""",
         sources= [
             {
               "name": "Our Airports",
-              "path": "http://ourairports.com/data/",
+              "path": "https://ourairports.com/data/",
               "title": "Our Airports"
             }
         ],

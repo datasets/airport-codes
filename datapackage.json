@@ -35,72 +35,86 @@
       "encoding": "utf-8",
       "format": "csv",
       "hash": "a703842678b1e549997e9701734de0c1",
+      "description": "List of airports worldwide with identification codes, location attributes, and facility type. Each row represents one airport or airfield.",
       "name": "airport-codes",
       "path": "data/airport-codes.csv",
       "profile": "tabular-data-resource",
       "schema": {
         "fields": [
           {
+            "description": "Unique identifier for the airport assigned by OurAirports (e.g. 'KLAX', '00A').",
             "format": "default",
             "name": "ident",
             "type": "string"
           },
           {
+            "description": "Type of facility. One of: small_airport, medium_airport, large_airport, heliport, seaplane_base, balloonport, closed.",
             "format": "default",
             "name": "type",
             "type": "string"
           },
           {
+            "description": "Official name of the airport or airfield.",
             "format": "default",
             "name": "name",
             "type": "string"
           },
           {
+            "description": "Elevation of the airport above mean sea level, in feet. May be empty for airports with no recorded elevation.",
             "format": "default",
             "name": "elevation_ft",
             "type": "integer"
           },
           {
+            "description": "Two-letter continent code: AF=Africa, AN=Antarctica, AS=Asia, EU=Europe, NA=North America, OC=Oceania, SA=South America.",
             "format": "default",
             "name": "continent",
             "type": "string"
           },
           {
+            "description": "ISO 3166-1 alpha-2 country code (e.g. 'US', 'GB', 'CN').",
             "format": "default",
             "name": "iso_country",
             "type": "string"
           },
           {
+            "description": "ISO 3166-2 code for the country subdivision (state, province, or region) in which the airport is located (e.g. 'US-CA', 'GB-ENG').",
             "format": "default",
             "name": "iso_region",
             "type": "string"
           },
           {
+            "description": "Name of the city or municipality the airport serves. May be empty.",
             "format": "default",
             "name": "municipality",
             "type": "string"
           },
           {
+            "description": "ICAO (International Civil Aviation Organization) four-letter airport code (e.g. 'KLAX'). May be empty for airports without an ICAO code.",
             "format": "default",
             "name": "icao_code",
             "type": "string"
           },
           {
+            "description": "IATA (International Air Transport Association) three-letter airport code used in passenger ticketing and baggage handling (e.g. 'LAX'). May be empty.",
             "format": "default",
             "name": "iata_code",
             "type": "string"
           },
           {
+            "description": "GPS code for the airport, typically the same as the ICAO code. May be empty.",
             "format": "default",
             "name": "gps_code",
             "type": "string"
           },
           {
+            "description": "Local or national code for the airport, used in country-specific systems (e.g. FAA codes in the US). May be empty.",
             "format": "default",
             "name": "local_code",
             "type": "string"
           },
           {
+            "description": "Geographic coordinates of the airport as a 'latitude, longitude' string in decimal degrees (e.g. '33.9425, -118.408056').",
             "format": "default",
             "name": "coordinates",
             "type": "string"
@@ -115,7 +129,7 @@
   "sources": [
     {
       "name": "Our Airports",
-      "path": "http://ourairports.com/data/",
+      "path": "https://ourairports.com/data/",
       "title": "Our Airports"
     }
   ],

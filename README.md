@@ -27,8 +27,8 @@ pip install -r scripts/requirements.txt
 python3 scripts/process.py
 python3 scripts/airport-codes-flow.py
 
-# Run the script
-make run
+# Or use make
+make
 make clean
 ```
 

@@ -6,11 +6,11 @@ from dataflows import validate, update_resource, add_metadata, dump_to_path
 
 def readme(fpath='README.md'):
     if os.path.exists(fpath):
-        return open(fpath).read()
+        return open(fpath, encoding='utf-8').read()
 
 
 dialing_info_cldr = Flow(
-    load('archive/data.csv', name='airport-codes'),
+    load('archive/data.csv', name='airport-codes', encoding='utf-8'),
     add_metadata(
         name= "airport-codes",
         title= "Airport Codes",

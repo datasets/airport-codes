@@ -13,22 +13,23 @@
     {
       "id": "odc-pddl",
       "name": "ODC-PDDL-1.0",
-      "path": "http://opendatacommons.org/licenses/pddl/",
+      "path": "https://opendatacommons.org/licenses/pddl/",
       "title": "Open Data Commons Public Domain Dedication and License v1.0"
     }
   ],
   "name": "airport-codes",
   "profile": "data-package",
-  "readme": "<a className=\"gh-badge\" href=\"https://datahub.io/core/airport-codes\"><img src=\"https://badgen.net/badge/icon/View%20on%20datahub.io/orange?icon=https://datahub.io/datahub-cube-badge-icon.svg&label&scale=1.25\" alt=\"badge\" /></a>\n\n## Description\n\nThe airport codes may refer to either [IATA](http://en.wikipedia.org/wiki/International_Air_Transport_Association_airport_code)\nairport code, a three-letter code which is used in passenger reservation, ticketing and baggage-handling systems, or the [ICAO](http://en.wikipedia.org/wiki/International_Civil_Aviation_Organization_airport_code) airport code\nwhich is a four letter code used by ATC systems and for airports that do not have an IATA airport code (from wikipedia).\n\nAirport codes from around the world. Downloaded from public domain source http://ourairports.com/data/ who compiled this data from multiple different sources. This data is updated nightly.\n\n## Data\n\n\"data/airport-codes.csv\" contains the list of all airport codes, the attributes are identified in datapackage description. Some of the columns contain attributes identifying airport locations, other codes (IATA, local if exist) that are relevant to identification of an airport.  \nOriginal source url is http://ourairports.com/data/airports.csv  (stored in archive/data.csv)  \n\n> Note: Currently the scripts is run automatically using Github Actions\n\n## Preparation\n\nYou will need Python 3.6 or greater and [dataflows](https://pypi.org/project/dataflows/) library to run the script\n\nTo update the data run the process script locally:\n```bash\n# To run locally you should do this\n# Install using requirements\npip install -r scripts/requirements.txt\npython3 scripts/process.py\npython3 scripts/airport-codes-flow.py\n\n# Or use make\nmake\nmake clean\n```\n\nSeveral steps will be done to get the final data.\n\n* merge columns \"latitude_deg\" and \"longitude_deg\" into \"coordinates\"\n* remove columns: \"id\",  \"scheduled_service\", \"home_link\", \"wikipedia_link\", \"keywords\"\n\n## Automation\n\nDaily updated 'Airport codes' datapackage could be found on the [datahub.io](http://datahub.io/):  \nhttps://datahub.io/core/airport-codes\n\n## License\n\nThe source specifies that the data can be used as is without any warranty. Given size and factual nature of the data and its source from a US company would imagine this was public domain and as such have licensed the Data Package under the Public Domain Dedication and License (PDDL).\n",
+  "readme": "<a className=\"gh-badge\" href=\"https://datahub.io/core/airport-codes\"><img src=\"https://badgen.net/badge/icon/View%20on%20datahub.io/orange?icon=https://datahub.io/datahub-cube-badge-icon.svg&label&scale=1.25\" alt=\"badge\" /></a>\n\n## Description\n\nThe airport codes may refer to either [IATA](https://en.wikipedia.org/wiki/IATA_airport_code)\nairport code, a three-letter code which is used in passenger reservation, ticketing and baggage-handling systems, or the [ICAO](https://en.wikipedia.org/wiki/ICAO_airport_code) airport code\nwhich is a four letter code used by ATC systems and for airports that do not have an IATA airport code (from wikipedia).\n\nAirport codes from around the world. Downloaded from public domain source https://ourairports.com/data/ who compiled this data from multiple different sources. This data is updated nightly.\n\n## Data\n\n\"data/airport-codes.csv\" contains the list of all airport codes, the attributes are identified in datapackage description. Some of the columns contain attributes identifying airport locations, other codes (IATA, local if exist) that are relevant to identification of an airport.  \nOriginal source url is https://ourairports.com/data/airports.csv  (stored in archive/data.csv)  \n\n> Note: Currently the scripts is run automatically using Github Actions\n\n## Preparation\n\nYou will need Python 3.12 or greater and [dataflows](https://pypi.org/project/dataflows/) library to run the script\n\nTo update the data run the process script locally:\n```bash\n# To run locally you should do this\n# Install using requirements\npip install -r scripts/requirements.txt\npython3 scripts/process.py\npython3 scripts/airport-codes-flow.py\n\n# Or use make\nmake\nmake clean\n```\n\nSeveral steps will be done to get the final data.\n\n* merge columns \"latitude_deg\" and \"longitude_deg\" into \"coordinates\"\n* remove columns: \"id\",  \"scheduled_service\", \"home_link\", \"wikipedia_link\", \"keywords\"\n\n## Automation\n\nDaily updated 'Airport codes' datapackage could be found on the [datahub.io](https://datahub.io/):  \nhttps://datahub.io/core/airport-codes\n\n## License\n\nThe source specifies that the data can be used as is without any warranty. Given size and factual nature of the data and its source from a US company would imagine this was public domain and as such have licensed the Data Package under the Public Domain Dedication and License (PDDL).\n",
   "resources": [
     {
       "bytes": 8832268,
+      "description": "List of airports and airfields worldwide with their IATA and ICAO codes, location identifiers, facility type, and geographic coordinates. Derived from the OurAirports public domain dataset by merging latitude and longitude into a single coordinates field.",
       "dialect": {
         "caseSensitiveHeader": false,
         "delimiter": ",",
         "doubleQuote": true,
         "header": true,
-        "lineTerminator": "\r\n",
+        "lineTerminator": "\n",
         "quoteChar": "\"",
         "skipInitialSpace": false
       },
@@ -41,66 +42,79 @@
       "schema": {
         "fields": [
           {
+            "description": "OurAirports unique identifier for the airport (e.g. `00A`, `KLAX`, `ZYTX`).",
             "format": "default",
             "name": "ident",
             "type": "string"
           },
           {
+            "description": "Facility type. One of: `small_airport`, `medium_airport`, `large_airport`, `heliport`, `seaplane_base`, `balloonport`.",
             "format": "default",
             "name": "type",
             "type": "string"
           },
           {
+            "description": "Full name of the airport or airfield.",
             "format": "default",
             "name": "name",
             "type": "string"
           },
           {
+            "description": "Elevation of the airport above sea level in feet. May be empty when unknown.",
             "format": "default",
             "name": "elevation_ft",
             "type": "integer"
           },
           {
+            "description": "Two-letter continent code (e.g. `NA` = North America, `EU` = Europe, `AS` = Asia, `AF` = Africa, `OC` = Oceania, `SA` = South America, `AN` = Antarctica).",
             "format": "default",
             "name": "continent",
             "type": "string"
           },
           {
+            "description": "ISO 3166-1 alpha-2 two-letter country code (e.g. `US`, `CN`, `GB`).",
             "format": "default",
             "name": "iso_country",
             "type": "string"
           },
           {
+            "description": "ISO 3166-2 region code combining country and subdivision (e.g. `US-CA`, `CN-21`).",
             "format": "default",
             "name": "iso_region",
             "type": "string"
           },
           {
+            "description": "Name of the city or municipality where the airport is located. May be empty.",
             "format": "default",
             "name": "municipality",
             "type": "string"
           },
           {
+            "description": "ICAO (International Civil Aviation Organization) 4-letter airport code, used by air traffic control. May be empty for facilities without an ICAO designation.",
             "format": "default",
             "name": "icao_code",
             "type": "string"
           },
           {
+            "description": "IATA (International Air Transport Association) 3-letter code, used in passenger ticketing and baggage handling. May be empty for facilities without commercial scheduled service.",
             "format": "default",
             "name": "iata_code",
             "type": "string"
           },
           {
+            "description": "GPS navigation code for the airport; often the same as the ICAO code. May be empty.",
             "format": "default",
             "name": "gps_code",
             "type": "string"
           },
           {
+            "description": "Local country-specific airport code; primarily used for US airports (FAA identifier). May be empty.",
             "format": "default",
             "name": "local_code",
             "type": "string"
           },
           {
+            "description": "Geographic coordinates as a `\"latitude, longitude\"` decimal string, derived from the source `latitude_deg` and `longitude_deg` columns.",
             "format": "default",
             "name": "coordinates",
             "type": "string"
@@ -108,6 +122,30 @@
         ],
         "missingValues": [
           ""
+        ]
+      }
+    },
+    {
+      "description": "Pre-aggregated count of airports by facility type, matching the type values in airport-codes.csv.",
+      "encoding": "utf-8",
+      "format": "csv",
+      "name": "type-counts",
+      "path": "data/type-counts.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "description": "Facility type (e.g. `Large Airport`, `Small Airport`, `Heliport`).",
+            "format": "default",
+            "name": "type",
+            "type": "string"
+          },
+          {
+            "description": "Number of airports of this type in the dataset.",
+            "format": "default",
+            "name": "count",
+            "type": "integer"
+          }
         ]
       }
     }

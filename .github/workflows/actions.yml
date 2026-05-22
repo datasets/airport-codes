@@ -18,6 +18,10 @@ jobs:
             python-version: "3.12"
         - name: Run
           run: make
+        - name: Validate datapackage
+          run: |
+            pip install frictionless
+            frictionless validate datapackage.json
         - name: Commit and Push
           run: |
             git config --global user.name "GitHub Action"

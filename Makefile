@@ -14,7 +14,7 @@ $(VENV)/bin/activate: scripts/requirements.txt
 	$(PIP) install -r scripts/requirements.txt
 
 validate:
-	$(PYTHON) -m frictionless validate data/constituents.csv
+	$(PYTHON) -m frictionless validate datapackage.json
 
 clean:
 	rm -rf __pycache__

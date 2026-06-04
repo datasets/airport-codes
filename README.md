@@ -11,7 +11,7 @@ Airport codes from around the world. Downloaded from public domain source https:
 ## Data
 
 "data/airport-codes.csv" contains the list of all airport codes, the attributes are identified in datapackage description. Some of the columns contain attributes identifying airport locations, other codes (IATA, local if exist) that are relevant to identification of an airport.  
-Original source url is https://ourairports.com/data/airports.csv  (stored in archive/data.csv)  
+Original source url is https://davidmegginson.github.io/ourairports-data/airports.csv  (stored in archive/data.csv)  
 
 > Note: Currently the scripts is run automatically using Github Actions
 

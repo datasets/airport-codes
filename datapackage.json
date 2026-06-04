@@ -47,7 +47,7 @@
             "type": "string"
           },
           {
-            "description": "Facility type. One of: `small_airport`, `medium_airport`, `large_airport`, `heliport`, `seaplane_base`, `balloonport`.",
+            "description": "Facility type. One of: `small_airport`, `medium_airport`, `large_airport`, `heliport`, `seaplane_base`, `balloonport`, `closed`.",
             "format": "default",
             "name": "type",
             "type": "string"
@@ -125,7 +125,7 @@
       }
     },
     {
-      "description": "Pre-aggregated count of airports by facility type, matching the type values in airport-codes.csv.",
+      "description": "Pre-aggregated count of airports by active facility type. Excludes `closed` airports. Values match the non-closed type values in airport-codes.csv.",
       "encoding": "utf-8",
       "format": "csv",
       "name": "type-counts",
@@ -160,7 +160,7 @@
   "version": "0.2.0",
   "views": [
     {
-      "description": "Distribution of the world's ~72,000 active airports by facility type. Small airports dominate with over 42,000 facilities — the infrastructure of general aviation. Heliports number over 22,000. Large commercial airports handling scheduled passenger services number just 1,194 worldwide, underscoring how concentrated commercial aviation is.",
+      "description": "Distribution of the world's active airports by facility type (excludes closed facilities). Small airports dominate with over 42,000 facilities — the infrastructure of general aviation. Heliports number over 23,000. Large commercial airports handling scheduled passenger services number about 1,178 worldwide, underscoring how concentrated commercial aviation is.",
       "name": "airports-by-type",
       "resources": [
         "airport-codes"
@@ -176,23 +176,23 @@
             },
             "staticData": [
               {
-                "count": 42582,
+                "count": 42669,
                 "type": "Small Airport"
               },
               {
-                "count": 22726,
+                "count": 23069,
                 "type": "Heliport"
               },
               {
-                "count": 4067,
+                "count": 4099,
                 "type": "Medium Airport"
               },
               {
-                "count": 1255,
+                "count": 1263,
                 "type": "Seaplane Base"
               },
               {
-                "count": 1194,
+                "count": 1178,
                 "type": "Large Airport"
               },
               {

@@ -8,7 +8,6 @@ all: data
 
 data: $(VENV)/bin/activate
 	$(PYTHON) scripts/process.py
-	$(PYTHON) scripts/airport-codes-flow.py
 
 $(VENV)/bin/activate: scripts/requirements.txt
 	python3 -m venv $(VENV)

@@ -25,15 +25,16 @@ def process():
                 "ident",
                 "type",
                 "name",
-                "coordinates",
                 "elevation_ft",
-                " continent",
+                "continent",
                 "iso_country",
                 "iso_region",
                 "municipality",
-                "gps_code",
+                "icao_code",
                 "iata_code",
+                "gps_code",
                 "local_code",
+                "coordinates",
             ]
             writer = csv.DictWriter(
                 result, fieldnames=fieldnames, extrasaction="ignore"

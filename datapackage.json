@@ -3,7 +3,7 @@
   "collection": "reference-data",
   "count_of_rows": 85543,
   "description": "Data contains the list of all airport codes,\nthe attributes are listed in the table schema. Some of the columns\ncontain attributes identifying airport locations,\nother codes (IATA, local if exist) that are relevant to\nidentification of an airport.",
-  "has_premium": true,
+  "has_extended_version": true,
   "has_solutions": [
     "global-country-region-reference-data"
   ],

@@ -5,7 +5,9 @@
   "description": "Data contains the list of all airport codes,\nthe attributes are listed in the table schema. Some of the columns\ncontain attributes identifying airport locations,\nother codes (IATA, local if exist) that are relevant to\nidentification of an airport.",
   "has_extended_version": true,
   "has_solutions": [
-    "global-country-region-reference-data"
+    "global-country-region-reference-data",
+    "logistics",
+    "worldwide-postal-code-database"
   ],
   "hash": "b985a79276a1dadceb9d3d18b41f5cc1",
   "homepage": "http://www.ourairports.com/",

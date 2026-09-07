@@ -23625,7 +23625,7 @@
 2237,"EDJA","large_airport","Memmingen Allgau Airport",47.988092,10.238248,2077,"EU","DE","DE-BY","Memmingen","yes","EDJA","FMM","EDJA",,,"https://en.wikipedia.org/wiki/Memmingen_Airport","ETSM"
 308861,"EDJG","small_airport","Grabenstätt Airfield",47.852757,12.55037,1765,"EU","DE","DE-BY","Grabenstätt","no",,,"EDJG",,,"https://de.wikipedia.org/wiki/Flugplatz_Grabenst%C3%A4tt",
 28490,"EDKA","small_airport","Aachen-Merzbrück Airport",50.823055,6.186389,623,"EU","DE","DE-NW","Aachen","no","EDKA","AAH","EDKA",,"https://www.flugplatz-aachen.de","https://en.wikipedia.org/wiki/Aachen_Merzbr%C3%BCck_Airfield","EDCM, ETBA, Flugplatz Aachen Merzbrück, Segelflug Aachen, Motorflug Aachen"
-28532,"EDKB","small_airport","Bonn-Hangelar Airfield",50.76889,7.163333,197,"EU","DE","DE-NW","Bonn","no",,,"EDKB",,,"http://de.wikipedia.org/wiki/Flugplatz_Bonn/Hangelar",
+28532,"EDKB","small_airport","Bonn-Hangelar Airfield",50.76889,7.163333,197,"EU","DE","DE-NW","Bonn","no","EDKB",,,,"https://edkb.de","http://de.wikipedia.org/wiki/Flugplatz_Bonn/Hangelar",
 28497,"EDKD","small_airport","Altena-Hegenscheid Airfield",51.312459,7.704134,1552,"EU","DE","DE-NW","Iserlohn","no",,,"EDKD",,,"https://de.wikipedia.org/wiki/Flugplatz_Altena-Hegenscheid",
 505117,"EDKF","small_airport","Bergneustadt-Auf dem Dümpel Airfield",51.05209,7.70683,1604,"EU","DE","DE-NW","Bergneustadt","no",,,"EDKF",,"https://www.lsc-duempel.de/","https://de.wikipedia.org/wiki/Flugplatz_Bergneustadt_Auf_dem_D%C3%BCmpel",
 28606,"EDKH","small_airport","Hünsborn Airfield",50.928612,7.899167,1306,"EU","DE","DE-NW","Wenden","no",,,"EDKH",,,"https://de.wikipedia.org/wiki/Flugplatz_H%C3%BCnsborn",
@@ -26038,9 +26038,9 @@
 27282,"FAWN","small_airport","Cape Winelands Airport",-33.77,18.74,399,"AF","ZA","ZA-WC","Durbanville","no","FAWN",,"FAWN",,"https://capewinelands.aero/","https://en.wikipedia.org/wiki/Cape_Winelands_Airport","Fisantekraal Airport, FAFK"
 30561,"FAWO","small_airport","Willowmore Airport",-33.263301849365234,23.4906005859375,2608,"AF","ZA","ZA-EC","Willowmore","no",,,"FAWO",,,,
 31061,"FAWP","closed","Wepener Airport",-29.741801,27.023349,4755,"AF","ZA","ZA-FS","Wepener","no",,,,,,,"FAWP, FA0074"
-30555,"FAWR","small_airport","Wavecrest Airport",-32.589906,28.518491,89,"AF","ZA","ZA-EC","Wavecrest","no",,,"FAWR",,,,
-30558,"FAWS","small_airport","Wesselbronn Af Airport",-27.84670066833496,26.35059928894043,4301,"AF","ZA","ZA-FS","Wesselsbron","no",,,"FAWS",,,,
-299605,"FAWT","small_airport","Winterveldt Mine Airport",-24.660091,30.180422,3000,"AF","ZA","ZA-NP","Doornbosch","no",,,"FAWT","FAWT",,,
+30555,"FAWR","small_airport","Wavecrest Airport",-32.589318,28.519384,89,"AF","ZA","ZA-EC","Wavecrest","no","FAWR",,"FAWR",,,,
+30558,"FAWS","small_airport","Wesselbronn Airport",-27.846701,26.350599,4301,"AF","ZA","ZA-FS","Wesselsbron","no","FAWS",,"FAWS",,,,
+299605,"FAWT","small_airport","Winterveldt Mine Airport",-24.660091,30.180422,3000,"AF","ZA","ZA-NP","Doornbosch","no","FAWT",,"FAWT",,,,
 349373,"FAWV","small_airport","White River Mercy Air",-25.319676,30.970782,2932,"AF","ZA","ZA-FS","White River","no",,,"FAWV",,"https://www.mercyair.co.za/about-us",,
 2858,"FAYP","medium_airport","Ysterplaat Air Force Base",-33.9002,18.498301,52,"AF","ZA","ZA-WC","Cape Town","no","FAYP",,"FAYP",,"http://www.af.mil.za/bases/afb_ysterplaat/","https://en.wikipedia.org/wiki/AFB_Ysterplaat","Maitland Aerodrome, AFS Brooklyn"
 610731,"FAZC","small_airport","Zululand Anthracite Colliery Airstrip",-28.216513,31.657851,931,"AF","ZA","ZA-NL","Zululand","no","FAZC",,"FAZC",,,,
@@ -48554,7 +48554,7 @@
 339918,"MX-1558","closed","Piedritas Airport",28.77473,-103.07528,2592,"NA","MX","MX-COA","Ocampo","no",,,,,,,
 339919,"MX-1559","closed","Rancho Santa Cruz Airstrip",26.82844,-101.10174,,"NA","MX","MX-COA","Monclova","no",,,,,,,
 339936,"MX-1560","small_airport","El Muchacho Airport",29.828452,-106.907691,5167,"NA","MX","MX-CHH","San Buenaventura","no",,,,"ELM",,,
-339939,"MX-1561","closed","El Centenario Airstrip",21.26786,-98.32724,164,"NA","MX","MX-VER","Platon Sanchez","no",,,,,,,"BJO, BJO"
+339939,"MX-1561","closed","El Centenario Airstrip",21.26786,-98.32724,164,"NA","MX","MX-VER","Platon Sanchez","no",,,,,,,"BJO"
 339945,"MX-1562","small_airport","Isla del Toro Airstrip",21.563367,-97.513887,10,"NA","MX","MX-VER","Tamiahua","no",,,,"IDT",,,
 339951,"MX-1563","heliport","Helipuerto Misión del Sol",18.887762,-99.1931,4511,"NA","MX","MX-MOR","Jiutepec","no",,,,"HOS",,,
 339952,"MX-1564","small_airport","Jova Agrícola Airport",24.907009,-107.513838,194,"NA","MX","MX-SIN","El Limón de los Ramos","no",,,,"AJC",,,
@@ -52343,7 +52343,7 @@
 5486,"OP37","small_airport","Pano Aqil Southeast Airport",27.813100814819336,69.16709899902344,200,"AS","PK","PK-SD","Pano Aqil","no",,,"OP37","OP37",,,
 5246,"OPBG","small_airport","Bhagatanwala Airport",32.056098938,72.94840240479999,600,"AS","PK","PK-PB","Bhagatanwala","no",,"BHW","OPBG",,,,
 41611,"OPBL","small_airport","Bela Airport",29.49220085144043,71.11840057373047,347,"AS","PK","PK-PB","Khan Bela","no",,,"OPBL",,,,
-30781,"OPBN","small_airport","Bannu Airport",32.9729,70.527901,1325,"AS","PK","PK-KP","Bannu","no","OPBN","BNP","OPBN",,,"https://en.wikipedia.org/wiki/Bannu_Airport",
+30781,"OPBN","closed","Bannu Airport",32.972001,70.524779,1325,"AS","PK","PK-KP","Bannu","no",,,,,,"https://en.wikipedia.org/wiki/Bannu_Airport","BNP, OPBN"
 41612,"OPBR","small_airport","Bahawalnagar Airport",29.946300506591797,73.24909973144531,500,"AS","PK","PK-PB","Bahawalnagar","no",,"WGB","OPBR",,,,
 5247,"OPBW","medium_airport","Bahawalpur Airport",29.348100662231445,71.71800231933594,392,"AS","PK","PK-PB","Bahawalpur","yes","OPBW","BHV","OPBW",,,"https://en.wikipedia.org/wiki/Bahawalpur_Airport",
 5248,"OPCH","medium_airport","Chitral Airport",35.886213,71.799922,4920,"AS","PK","PK-KP","Chitral","yes","OPCH","CJL","OPCH",,,"https://en.wikipedia.org/wiki/Chitral_Airport",
@@ -67195,7 +67195,7 @@
 46141,"URRH","small_airport","Shakhty Airfield",47.697,40.287,,"EU","RU","RU-ROS","Shakhty","no",,,"URRH",,,"https://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D1%85%D1%82%D1%8B_(%D0%B0%D1%8D%D1%80%D0%BE%D0%BF%D0%BE%D1%80%D1%82)","Аэропорт Шахты, УРРХ"
 507374,"URRN","small_airport","Potapov",47.465981,41.925036,,"EU","RU","RU-ROS",,"no",,,"URRN",,,,
 326363,"URRP","large_airport","Platov International Airport",47.493888,39.924722,213,"EU","RU","RU-ROS","Rostov-on-Don","no","URRP","ROV","URRP",,,"https://en.wikipedia.org/wiki/Platov_International_Airport","УРРП, Международный аэропорт Платов"
-44865,"URRT","medium_airport","Taganrog Yuzhny Airport",47.198333,38.849167,117,"EU","RU","RU-ROS","Taganrog","no",,"TGK","URRT","XRRT","http://www.beriev.com/rus/airport.html","https://ru.wikipedia.org/wiki/Таганрог-Южный_(аэропорт)","УРРТ, ЬРРТ, Taganrog South Airport, Аэропорт Таганрог / Южный,"
+44865,"URRT","medium_airport","Taganrog Yuzhny Airport",47.198333,38.849167,117,"EU","RU","RU-ROS","Taganrog","no",,"TGK","XRRT","URRT","http://www.beriev.com/rus/airport.html","https://ru.wikipedia.org/wiki/Таганрог-Южный_(аэропорт)","УРРТ, ЬРРТ, Taganrog South Airport, Аэропорт Таганрог / Южный,"
 6519,"URSS","large_airport","Sochi International Airport",43.449902,39.9566,89,"EU","RU","RU-KDA","Sochi","yes","URSS","AER","URSS",,"https://aer.aero/en","https://en.wikipedia.org/wiki/Sochi_International_Airport","Adler Airport, Black Sea, Международный Аэропорт Сочи"
 6520,"URWA","large_airport","Astrakhan Narimanovo Boris M. Kustodiev International Airport",46.282843,48.010511,-65,"AS","RU","RU-AST","Astrakhan","yes","URWA","ASF","URWA",,"http://xn--80aaaa9dcahhdbllc1cxhc.xn--p1ai/","https://en.wikipedia.org/wiki/Narimanovo_Airport","Astrahan Airport, Narimanovo Airport, Аэропорт Астрахань, Аэропорт Нариманово"
 6521,"URWI","medium_airport","Elista Airport",46.373901,44.330898,501,"EU","RU","RU-KL","Elista","yes","URWI","ESL","URWI",,"https://aero-elista.ru/","https://en.wikipedia.org/wiki/Elista_Airport",
@@ -85395,7 +85395,7 @@
 333001,"ZA-0163","small_airport","Kalahari Oryx",-28.421977,22.200966,2880,"AF","ZA","ZA-NC","Upington","no",,,,,,,"Tweepoort"
 337687,"ZA-0164","small_airport","Vlakteplaas Airstrip",-33.969025,24.939802,216,"AF","ZA","ZA-EC","Jeffreys Bay","no",,,,,"http://www.skydivejeffreysbay.co.za/vlakteplaas",,
 340246,"ZA-0165","small_airport","Manzengwenya Airstrip",-27.25942,32.7522,154,"AF","ZA","ZA-NL","Manzengwenya","no",,,,,,,"Big Skies"
-340247,"ZA-0166","small_airport","Sodwana Airstrip",-27.56774,32.65322,,"AF","ZA","ZA-NL","Sodwana Bay","no",,,,,,,
+340247,"ZA-0166","small_airport","Sodwana Airstrip",-27.56774,32.65322,88,"AF","ZA","ZA-NL","Sodwana Bay","no","FAWW",,"FAWW",,,,
 340248,"ZA-0167","heliport","Netcare uMhlanga Hospital Helipad",-29.72751,31.06868,,"AF","ZA","ZA-NL","uMhlanga","no",,,,,,,
 340249,"ZA-0168","heliport","Intertherm Durban Heliport",-29.74968,31.02946,,"AF","ZA","ZA-NL","Durban North","no",,,,,,,
 331107,"ZA-0169","small_airport","Lekoa Airstrip",-26.9457,28.7136,5085,"AF","ZA","ZA-MP","Herbstfontein","no",,,,,,,"FALEKOA"

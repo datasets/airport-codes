@@ -123,7 +123,7 @@
       }
     },
     {
-      "description": "Old snapshot of airport counts by facility type, written by hand. The script does not rebuild it, and it has no row for closed facilities. Count the type column of airport-codes.csv instead.",
+      "description": "Number of facilities by type, including closed ones, counted from airport-codes.csv each time the data is updated.",
       "encoding": "utf-8",
       "format": "csv",
       "mediatype": "text/csv",
@@ -139,7 +139,7 @@
             "type": "string"
           },
           {
-            "description": "Number of airports of this type when the file was written. Not kept up to date.",
+            "description": "Number of facilities of this type in airport-codes.csv.",
             "format": "default",
             "name": "count",
             "type": "integer"
@@ -159,7 +159,7 @@
   "version": "0.2.0",
   "views": [
     {
-      "description": "Airports by facility type. The bars use an old fixed snapshot of counts that the script does not update, and it leaves out closed facilities.",
+      "description": "Facilities by type, including closed ones. The bars use the counts in type-counts.csv, which the update script refreshes together with the data.",
       "name": "airports-by-type",
       "resources": [
         "airport-codes"
@@ -175,27 +175,31 @@
             },
             "staticData": [
               {
-                "count": 42582,
+                "count": 42817,
                 "type": "Small Airport"
               },
               {
-                "count": 22726,
+                "count": 23244,
                 "type": "Heliport"
               },
               {
-                "count": 4067,
+                "count": 13574,
+                "type": "Closed"
+              },
+              {
+                "count": 4104,
                 "type": "Medium Airport"
               },
               {
-                "count": 1255,
+                "count": 1273,
                 "type": "Seaplane Base"
               },
               {
-                "count": 1194,
+                "count": 1176,
                 "type": "Large Airport"
               },
               {
-                "count": 61,
+                "count": 63,
                 "type": "Balloonport"
               }
             ],

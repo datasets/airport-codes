@@ -10,7 +10,7 @@ Column definitions and types are in `datapackage.json`.
 
 * `data/airport-codes.csv` has one row per facility.
 * `archive/data.csv` is an unchanged copy of the file downloaded from OurAirports, with all of its columns.
-* `data/type-counts.csv` is a small table of counts by facility type. See the limitations below.
+* `data/type-counts.csv` is a small table of counts by facility type, including `Closed`. It is rebuilt from `airport-codes.csv` each time the data is updated.
 
 Columns of `data/airport-codes.csv`:
 
@@ -36,7 +36,6 @@ Columns of `data/airport-codes.csv`:
 * The file includes closed facilities (`type` is `closed`). Filter on `type` if you only want facilities that are in use.
 * `NA` is a real value in two columns: `continent` (North America) and `iso_country` (Namibia). By default pandas reads `NA` as missing. Read the file as text and turn that off: `pd.read_csv("data/airport-codes.csv", dtype=str, keep_default_na=False)`. Empty cells are then empty strings.
 * `coordinates` is one text column, not two numbers. To split it: `lat_lon = df["coordinates"].str.split(", ", expand=True).astype(float)`. The original `latitude_deg` and `longitude_deg` columns are only in `archive/data.csv`.
-* `data/type-counts.csv` was written by hand. The script does not rebuild it, so it is an old snapshot, and it has no row for `closed`. To count facilities by type, use `airport-codes.csv`: `df["type"].value_counts()`.
 
 ## Data sources
 
@@ -64,9 +63,9 @@ make
 make clean
 ```
 
-The script downloads `airports.csv` into `archive/data.csv`, then writes `data/airport-codes.csv`.
+The script downloads `airports.csv` into `archive/data.csv`, then writes `data/airport-codes.csv`. It then counts the facilities by type to write `data/type-counts.csv` and to update the counts used by the chart in `datapackage.json`.
 
-A GitHub workflow runs the script every night (at 00:00 UTC) and on every push to `main`, and commits `archive/` and `data/` if they changed.
+A GitHub workflow runs the script every night (at 00:00 UTC) and on every push to `main`, and commits `archive/`, `data/` and `datapackage.json` if they changed.
 
 The data is also published on [datahub.io](https://datahub.io/core/airport-codes).
 

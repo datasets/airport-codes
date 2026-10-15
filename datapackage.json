@@ -23,7 +23,6 @@
   "profile": "data-package",
   "resources": [
     {
-      "bytes": 8842621,
       "description": "List of airports and airfields worldwide with their IATA and ICAO codes, location identifiers, facility type, and geographic coordinates. Derived from the OurAirports public domain dataset by merging latitude and longitude into a single coordinates field.",
       "dialect": {
         "caseSensitiveHeader": false,
@@ -36,7 +35,6 @@
       },
       "encoding": "utf-8",
       "format": "csv",
-      "hash": "d47e3cafbcd98b4816a895d8df23cffb",
       "name": "airport-codes",
       "path": "data/airport-codes.csv",
       "profile": "tabular-data-resource",

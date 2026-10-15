@@ -1,6 +1,6 @@
 {
   "collection": "reference-data",
-  "description": "Data contains the list of all airport codes,\nthe attributes are listed in the table schema. Some of the columns\ncontain attributes identifying airport locations,\nother codes (IATA, local if exist) that are relevant to\nidentification of an airport.",
+  "description": "Airports, heliports and other aviation facilities worldwide, with IATA, ICAO and other codes, type, location and coordinates, from OurAirports. Includes closed facilities.",
   "has_extended_version": true,
   "has_solutions": [
     "global-country-region-reference-data",
@@ -13,7 +13,7 @@
       "id": "odc-pddl",
       "name": "ODC-PDDL-1.0",
       "path": "https://opendatacommons.org/licenses/pddl/1.0/",
-      "title": "Open Data Commons Public Domain Dedication and License v1.0"
+      "title": "Open Data Commons Public Domain Dedication and License v1.0. OurAirports releases its data to the public domain. The reuse terms of OurAirports' own sources and of the IATA and ICAO code lists are unclear (see the README)."
     }
   ],
   "name": "airport-codes",
@@ -32,6 +32,7 @@
       },
       "encoding": "utf-8",
       "format": "csv",
+      "mediatype": "text/csv",
       "name": "airport-codes",
       "path": "data/airport-codes.csv",
       "profile": "tabular-data-resource",
@@ -122,9 +123,10 @@
       }
     },
     {
-      "description": "Pre-aggregated count of airports by facility type, matching the type values in airport-codes.csv.",
+      "description": "Old snapshot of airport counts by facility type, written by hand. The script does not rebuild it, and it has no row for closed facilities. Count the type column of airport-codes.csv instead.",
       "encoding": "utf-8",
       "format": "csv",
+      "mediatype": "text/csv",
       "name": "type-counts",
       "path": "data/type-counts.csv",
       "profile": "tabular-data-resource",
@@ -137,7 +139,7 @@
             "type": "string"
           },
           {
-            "description": "Number of airports of this type in the dataset.",
+            "description": "Number of airports of this type when the file was written. Not kept up to date.",
             "format": "default",
             "name": "count",
             "type": "integer"
@@ -148,16 +150,16 @@
   ],
   "sources": [
     {
-      "name": "Our Airports",
-      "path": "https://ourairports.com/data/",
-      "title": "Our Airports"
+      "name": "OurAirports",
+      "path": "https://ourairports.com/data/airports.csv",
+      "title": "OurAirports airports.csv"
     }
   ],
   "title": "Airport Codes",
   "version": "0.2.0",
   "views": [
     {
-      "description": "Distribution of the world's ~72,000 active airports by facility type. Small airports dominate with over 42,000 facilities — the infrastructure of general aviation. Heliports number over 22,000. Large commercial airports handling scheduled passenger services number just 1,194 worldwide, underscoring how concentrated commercial aviation is.",
+      "description": "Airports by facility type. The bars use an old fixed snapshot of counts that the script does not update, and it leaves out closed facilities.",
       "name": "airports-by-type",
       "resources": [
         "airport-codes"

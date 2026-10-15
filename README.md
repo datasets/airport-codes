@@ -1,28 +1,61 @@
 <a className="gh-badge" href="https://datahub.io/core/airport-codes"><img src="https://badgen.net/badge/icon/View%20on%20datahub.io/orange?icon=https://datahub.io/datahub-cube-badge-icon.svg&label&scale=1.25" alt="badge" /></a>
 
-## Description
+# Airport Codes
 
-The airport codes may refer to either [IATA](https://en.wikipedia.org/wiki/IATA_airport_code)
-airport code, a three-letter code which is used in passenger reservation, ticketing and baggage-handling systems, or the [ICAO](https://en.wikipedia.org/wiki/ICAO_airport_code) airport code
-which is a four letter code used by ATC systems and for airports that do not have an IATA airport code (from wikipedia).
+Airports, airfields, heliports and other aviation facilities from around the world, with their [IATA](https://en.wikipedia.org/wiki/IATA_airport_code) codes (three letters, used in passenger reservation, ticketing and baggage handling), [ICAO](https://en.wikipedia.org/wiki/ICAO_airport_code) codes (four letters, used by air traffic control) and other identifiers, plus type, location and coordinates. The data comes from OurAirports.
 
-Airport codes from around the world. Downloaded from public domain source https://ourairports.com/data/ who compiled this data from multiple different sources. This data is updated nightly.
+Column definitions and types are in `datapackage.json`.
 
 ## Data
 
-"data/airport-codes.csv" contains the list of all airport codes, the attributes are identified in datapackage description. Some of the columns contain attributes identifying airport locations, other codes (IATA, local if exist) that are relevant to identification of an airport.  
-Original source url is https://ourairports.com/data/airports.csv  (an unchanged copy with all of its columns is stored in archive/data.csv)  
+* `data/airport-codes.csv` has one row per facility.
+* `archive/data.csv` is an unchanged copy of the file downloaded from OurAirports, with all of its columns.
+* `data/type-counts.csv` is a small table of counts by facility type. See the limitations below.
 
-> Note: Currently the scripts is run automatically using Github Actions
+Columns of `data/airport-codes.csv`:
+
+| Column | Meaning |
+|---|---|
+| `ident` | OurAirports identifier of the facility, for example `KLAX` or `00A`. It is not always an ICAO code |
+| `type` | `large_airport`, `medium_airport`, `small_airport`, `heliport`, `seaplane_base`, `balloonport` or `closed` |
+| `name` | Name of the facility |
+| `elevation_ft` | Elevation above sea level in feet. Empty when unknown |
+| `continent` | Two-letter continent code: `AF`, `AN`, `AS`, `EU`, `NA` (North America), `OC`, `SA` |
+| `iso_country` | Two-letter country code, for example `US` |
+| `iso_region` | Country and region, for example `US-CA` |
+| `municipality` | City or town served. Empty when unknown |
+| `icao_code` | ICAO code, for example `KLAX`. Often empty |
+| `iata_code` | IATA code, for example `LAX`. Often empty |
+| `gps_code` | GPS code. Often the same as the ICAO code. May be empty |
+| `local_code` | Code used inside the country, for example the FAA code in the US. May be empty |
+| `coordinates` | Latitude and longitude in one text value: `"33.942501, -118.407997"` |
+
+### Known limitations
+
+* Many rows have no `iata_code` or no `icao_code`, because many facilities have no such code. Do not use either column as a key.
+* The file includes closed facilities (`type` is `closed`). Filter on `type` if you only want facilities that are in use.
+* `NA` is a real value in two columns: `continent` (North America) and `iso_country` (Namibia). By default pandas reads `NA` as missing. Read the file as text and turn that off: `pd.read_csv("data/airport-codes.csv", dtype=str, keep_default_na=False)`. Empty cells are then empty strings.
+* `coordinates` is one text column, not two numbers. To split it: `lat_lon = df["coordinates"].str.split(", ", expand=True).astype(float)`. The original `latitude_deg` and `longitude_deg` columns are only in `archive/data.csv`.
+* `data/type-counts.csv` was written by hand. The script does not rebuild it, so it is an old snapshot, and it has no row for `closed`. To count facilities by type, use `airport-codes.csv`: `df["type"].value_counts()`.
+
+## Data sources
+
+* [OurAirports][oa] ([airports.csv][oacsv]): the list of airports, with all columns. OurAirports says it compiles its data from many sources, listed on its [About page][oaabout]. Licence: public domain, as stated by OurAirports (see [License](#license)).
+
+Changes made to the source data: the file `airports.csv` is downloaded; `latitude_deg` and `longitude_deg` are combined into one `coordinates` column; the columns `id`, `scheduled_service`, `home_link`, `wikipedia_link` and `keywords` are removed. No rows are changed, added or removed.
+
+Not endorsed by, or affiliated with, OurAirports.
+
+[oa]: https://ourairports.com/data/
+[oacsv]: https://ourairports.com/data/airports.csv
+[oaabout]: https://ourairports.com/about.html
 
 ## Preparation
 
-You will need Python 3.12 or greater to run the script
+You need Python 3.12 or greater. To rebuild the data from the repository root:
 
-To update the data run the process script locally:
 ```bash
-# To run locally you should do this
-# Install using requirements
+# Install the requirements and run the script
 pip install -r scripts/requirements.txt
 python3 scripts/process.py
 
@@ -31,18 +64,19 @@ make
 make clean
 ```
 
-Several steps will be done to get the final data.
+The script downloads `airports.csv` into `archive/data.csv`, then writes `data/airport-codes.csv`.
 
-* merge columns "latitude_deg" and "longitude_deg" into "coordinates"
-* remove columns: "id",  "scheduled_service", "home_link", "wikipedia_link", "keywords"
+A GitHub workflow runs the script every night (at 00:00 UTC) and on every push to `main`, and commits `archive/` and `data/` if they changed.
 
-## Automation
-
-Daily updated 'Airport codes' datapackage could be found on the [datahub.io](https://datahub.io/):  
-https://datahub.io/core/airport-codes
+The data is also published on [datahub.io](https://datahub.io/core/airport-codes).
 
 ## License
 
-The data comes from OurAirports (https://ourairports.com/data/). OurAirports states: "All data is released to the Public Domain, and comes with no guarantee of accuracy or fitness for use." Credit is not required; OurAirports asks for it as a courtesy, and a credit line is in `ATTRIBUTION.txt`. This data package is offered under the Open Data Commons Public Domain Dedication and License (PDDL) 1.0. OurAirports says it compiles its data from many sources (https://ourairports.com/about.html).
+The data comes from OurAirports (https://ourairports.com/data/). OurAirports states: "All data is released to the Public Domain, and comes with no guarantee of accuracy or fitness for use." Credit is not required; OurAirports asks for it as a courtesy, and a credit line is in [ATTRIBUTION.txt](ATTRIBUTION.txt).
 
-Unclear: OurAirports' own sources (for example government airport lists and GeoNames) and any rights IATA or ICAO may hold in their code lists. We did not find terms that answer this, so this package does not claim more than OurAirports' statement above.
+Two things are unclear. We did not find terms that answer either, so this package does not claim more than OurAirports' statement above:
+
+* OurAirports' own sources (for example government airport lists and GeoNames). OurAirports names them but we found no statement from them about reuse.
+* Any rights IATA or ICAO may hold in their code lists. The IATA code search page carries "All rights reserved" and we did not read IATA's or ICAO's terms.
+
+The maintainers offer their own work (the selection and formatting of the data) under the [Public Domain Dedication and License (PDDL)](https://opendatacommons.org/licenses/pddl/1.0/).

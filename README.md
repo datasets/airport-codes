@@ -11,7 +11,7 @@ Airport codes from around the world. Downloaded from public domain source https:
 ## Data
 
 "data/airport-codes.csv" contains the list of all airport codes, the attributes are identified in datapackage description. Some of the columns contain attributes identifying airport locations, other codes (IATA, local if exist) that are relevant to identification of an airport.  
-Original source url is https://ourairports.com/data/airports.csv  (stored in archive/data.csv)  
+Original source url is https://ourairports.com/data/airports.csv  (an unchanged copy with all of its columns is stored in archive/data.csv)  
 
 > Note: Currently the scripts is run automatically using Github Actions
 
@@ -43,4 +43,6 @@ https://datahub.io/core/airport-codes
 
 ## License
 
-The source specifies that the data can be used as is without any warranty. Given size and factual nature of the data and its source from a US company would imagine this was public domain and as such have licensed the Data Package under the Public Domain Dedication and License (PDDL).
+The data comes from OurAirports (https://ourairports.com/data/). OurAirports states: "All data is released to the Public Domain, and comes with no guarantee of accuracy or fitness for use." Credit is not required; OurAirports asks for it as a courtesy, and a credit line is in `ATTRIBUTION.txt`. This data package is offered under the Open Data Commons Public Domain Dedication and License (PDDL) 1.0. OurAirports says it compiles its data from many sources (https://ourairports.com/about.html).
+
+Unclear: OurAirports' own sources (for example government airport lists and GeoNames) and any rights IATA or ICAO may hold in their code lists. We did not find terms that answer this, so this package does not claim more than OurAirports' statement above.

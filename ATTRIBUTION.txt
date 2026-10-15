@@ -1,0 +1,9 @@
+Attribution — Airport Codes
+
+Contains information from OurAirports (https://ourairports.com/data/), released to the public domain (https://ourairports.com/data/).
+
+Changes made to the source data: the airports file is downloaded each night; latitude_deg and longitude_deg are combined into one "coordinates" column; the columns id, scheduled_service, home_link, wikipedia_link and keywords are removed; no rows are changed or removed. An unchanged copy of the downloaded file is kept in archive/data.csv.
+
+Not endorsed by, or affiliated with, OurAirports.
+
+OurAirports provides the data with no guarantee of accuracy or fitness for use.

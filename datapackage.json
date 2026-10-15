@@ -1,7 +1,5 @@
 {
-  "bytes": 8842621,
   "collection": "reference-data",
-  "count_of_rows": 85543,
   "description": "Data contains the list of all airport codes,\nthe attributes are listed in the table schema. Some of the columns\ncontain attributes identifying airport locations,\nother codes (IATA, local if exist) that are relevant to\nidentification of an airport.",
   "has_extended_version": true,
   "has_solutions": [
@@ -9,13 +7,12 @@
     "logistics",
     "worldwide-postal-code-database"
   ],
-  "hash": "b985a79276a1dadceb9d3d18b41f5cc1",
-  "homepage": "http://www.ourairports.com/",
+  "homepage": "https://ourairports.com/",
   "licenses": [
     {
       "id": "odc-pddl",
       "name": "ODC-PDDL-1.0",
-      "path": "https://opendatacommons.org/licenses/pddl/",
+      "path": "https://opendatacommons.org/licenses/pddl/1.0/",
       "title": "Open Data Commons Public Domain Dedication and License v1.0"
     }
   ],
@@ -47,7 +44,7 @@
             "type": "string"
           },
           {
-            "description": "Facility type. One of: `small_airport`, `medium_airport`, `large_airport`, `heliport`, `seaplane_base`, `balloonport`.",
+            "description": "Facility type. One of: `small_airport`, `medium_airport`, `large_airport`, `heliport`, `seaplane_base`, `balloonport`, `closed`.",
             "format": "default",
             "name": "type",
             "type": "string"

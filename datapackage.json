@@ -175,15 +175,15 @@
             },
             "staticData": [
               {
-                "count": 42777,
+                "count": 42783,
                 "type": "Small Airport"
               },
               {
-                "count": 23280,
+                "count": 23278,
                 "type": "Heliport"
               },
               {
-                "count": 13650,
+                "count": 13652,
                 "type": "Closed"
               },
               {
@@ -191,7 +191,7 @@
                 "type": "Medium Airport"
               },
               {
-                "count": 1273,
+                "count": 1274,
                 "type": "Seaplane Base"
               },
               {
